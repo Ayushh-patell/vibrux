@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import { Canvas } from '@react-three/fiber';
 import './App.css';
+import Experience from './Component/Experience';
+import Overlay from './Component/Overlay';
+import { useState } from 'react';
 
 function App() {
+
+  const [top, settop] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className=' w-full h-screen fixed top-0 left-0 '>
+    <Canvas>
+      <Experience top={top}/>
+    </Canvas>
     </div>
+    <Overlay settop={settop} top={top}/>
+
+</>
   );
 }
 

@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.font-chakra {
+    font-family: "Chakra Petch", sans-serif;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .menuText {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    position: relative;
+    background: linear-gradient(90deg, white, white);
+    background-size: 100% 10%;
+    background-position: 100% 0%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    transition: background-size 0.3s cubic-bezier(.09,.49,.63,.58);
   }
-  to {
-    transform: rotate(360deg);
+  
+  .menuText:hover {
+    background-size: 100% 85%;
   }
-}
+  
+  .scrollerHidden {
+    scrollbar-width: 0px;
+  }
+  body::-webkit-scrollbar, html::-webkit-scrollbar, .scrollerHidden::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background-color: transparent;
+  }
+  .scrollerHidden::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
+  display: none;
+  width: 0px;
+  background: transparent;
+  }
+  .scrollerHidden::-webkit-scrollbar-track-piece, body::-webkit-scrollbar-track-piece, html::-webkit-scrollbar-track-piece {
+  display: none;
+  width: 0px;
+  background: transparent;
+  }
+  .scrollerHidden::-webkit-scrollbar-track, body::-webkit-scrollbar-track, html::-webkit-scrollbar-track {
+  display: none;
+  width: 0px;
+  background: transparent;
+  }
+  
+  .navFooterItem:hover {
+  left: 0px;
+  }
+
+ 
