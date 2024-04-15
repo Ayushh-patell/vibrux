@@ -6,15 +6,14 @@ import { useState } from 'react';
 
 function App() {
 
-  const [top, settop] = useState(false)
   return (
     <>
     <div className=' w-full h-screen fixed top-0 left-0 '>
     <Canvas>
-      <Experience top={top}/>
+      <Experience/>
     </Canvas>
     </div>
-    <Overlay settop={settop} top={top}/>
+    <Overlay/>
 
 </>
   );

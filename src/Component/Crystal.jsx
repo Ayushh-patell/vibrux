@@ -11,7 +11,6 @@ import gsap from 'gsap'
 import { Crystal1 } from './Crystal_1'
 import { Crystal2 } from './Crystal_2'
 import { CrystalP } from './Crystal_parts'
-import { log } from 'three/examples/jsm/nodes/Nodes.js'
 
 export function Crystal(props) {
   const { nodes, materials } = useGLTF('./Models/crystal_round.glb')
@@ -36,36 +35,48 @@ export function Crystal(props) {
   const CryP13 = useRef()
   const tl = useRef()
   const tl2 = useRef()
+  const CryRef = useRef()
 
 
-
-   const scroll = useScroll() 
- 
-  useEffect(() => {    
-scroll.offset = 0
-  },[props.top])
+  const ScreenX = window.innerWidth
+  const ScreenY = window.innerHeight
+  
+  const Mousetrack = (e) => {
+    const MouseX = e.clientX
+    const MouseY = e.clientY
+  
+    // ROTATE THE CRYSTALS ACCOORDING TO THE MOUSE MOVEMENT
+    const CalcValX = ((2*MouseX)/ScreenX)-1
+    console.log(CalcValX)
+    CryRef.current.rotation.y = 0.005*CalcValX
+    CryRef.current.rotation.z = -0.005*CalcValX
+  
+  
+  
+    // console.log(e.clientX, e.clientY);
+  }
+  useEffect(() => {
+    window.addEventListener("mousemove",Mousetrack)
+  
+    return () => {
+      window.removeEventListener("mousemove", Mousetrack)
+    }
+  })
 
   useFrame(() => {
-    tl.current.seek(scroll.offset * tl.current.duration())
-    tl2.current.seek(scroll.offset * tl2.current.duration())
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    
+    // Calculate scroll position in the range of 0 to 1
+    const scrollOffset = scrollTop / scrollHeight;
 
-    const content = document.getElementById('App');
-    const totalHeight = content.clientHeight;
-    let scrollDist = totalHeight*scroll.offset
-    // body.scrollTop = 200
-    window.scrollTo({
-      top:scrollDist,
-      behavior:"smooth"
-    })
+    tl.current.seek(scrollOffset * tl.current.duration())
+    tl2.current.seek(scrollOffset * tl2.current.duration())
+// console.log();
+
     
   })
 
-
-
-  // nodes.forEach((item) => {
-  //   console.log(item)
-  // })
-  let nodesUpdated = {}
   for(let i in nodes) {
 
     nodes.Cylinder001.material.roughness = 0.5
@@ -87,11 +98,11 @@ scroll.offset = 0
     tl.current.to(Cry.current.rotation, {duration:1, x:0,y:0,z:0.33},2.3)
     tl.current.to(Cry.current.position, {duration:1, x:65,y:7,z:-14},2.3)
     // PART 4 CRYTSTAL 2 ANIMATION IN AND OUT
-    tl.current.to(Cry2.current.position, {duration:0.8, x:-14,y:7,z:-14},2.4)
-    tl.current.to(Cry2.current.rotation, {duration:0.1, x:-1.4,y:0,z:1.35},2.4)
-    tl.current.to(Cry2.current.rotation, {duration:0.7, x:-1.4,y:0,z:0},2.5)
-    tl.current.to(Cry2.current.position, {duration:1, x:-70,y:7,z:14},3.2)
-    tl.current.to(Cry2.current.rotation, {duration:1, x:0,y:0,z:0, ease:"power1.in"},3.2)
+    tl.current.to(Cry2.current.position, {duration:0.8, x:-14,y:7,z:-14},2.6)
+    tl.current.to(Cry2.current.rotation, {duration:0.1, x:-1.4,y:0,z:1.35},2.6)
+    tl.current.to(Cry2.current.rotation, {duration:0.7, x:-1.4,y:0,z:0},2.7)
+    tl.current.to(Cry2.current.position, {duration:1, x:-70,y:7,z:14},3.4)
+    tl.current.to(Cry2.current.rotation, {duration:1, x:0,y:0,z:0, ease:"power1.in"},3.4)
     // PART 5 ZOOM OUT ANIMAITON OF MAIN GROUP
     tl.current.to(ref.current.position, {duration:3.5, y:-100,z:-350, ease:"power1.in"},3.5)
     tl.current.to(ref.current.position, {duration:2.5, y:-230,z:-1080},7)
@@ -136,6 +147,7 @@ scroll.offset = 0
 
   return (
     <>
+    <group ref={CryRef}>
     <group {...props} dispose={null} rotation={[0,1.6,0]} position={[0,0,0]} ref={ref}>
       
       <mesh ref={crystalRef} geometry={nodes.Cylinder100.geometry} material={nodes.Cylinder100.material} type='MeshPhongMaterial' position={[102.066, 7.416, -0.523]} rotation={[0.82, 0.889, -0.744]} scale={[3.165, 8.223, 3.165]} />
@@ -546,6 +558,7 @@ scroll.offset = 0
       <Crystal2 Cry2={Cry2}/>
     </group>
       <CrystalP CryP={CryP} CryP1={CryP1} CryP2={CryP2} CryP3={CryP3} CryP4={CryP4} CryP5={CryP5} CryP6={CryP6} CryP7={CryP7} CryP8={CryP8} CryP9={CryP9} CryP10={CryP10} CryP11={CryP11} CryP12={CryP12} CryP13={CryP13}/>
+      </group>
       </>
       )
 }

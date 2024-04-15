@@ -4,25 +4,37 @@ import { Crystal } from "./Crystal";
 import { useControls } from "leva";
 import { DirectionalLightHelper } from "three";
 import Overlay from "./Overlay";
+import { useFrame } from "@react-three/fiber";
 
-const Experience = ({top}) => {
+const Experience = () => {
 const directionalPurple = useRef()
 const directionalPink = useRef()
 const directionalWhite = useRef()
 
-// useHelper(directionalPurple, DirectionalLightHelper, 5, "purple")
+
+useFrame((state) => {
+directionalPurple.current.position.x = 160 -(80 * (Math.sin(state.clock.elapsedTime) * 0.3))
+directionalPurple.current.position.y = 16 -(80 * (Math.sin(state.clock.elapsedTime) * 0.3))
+directionalPurple.current.position.z =  -40 -(160* (Math.sin(state.clock.elapsedTime) * 0.3))
+
+directionalPink.current.position.x = 0 -(160 * (Math.sin(state.clock.elapsedTime) * 0.3))
+directionalPink.current.position.y = 70 -(80 * (Math.sin(state.clock.elapsedTime) * 0.3))
+directionalPink.current.position.z =  -100 -(80* (Math.sin(state.clock.elapsedTime) * 0.3))
+
+directionalWhite.current.position.x = 36 -(20 * (Math.sin(state.clock.elapsedTime) * 0.3))
+directionalWhite.current.position.y = 20 -(10 * (Math.sin(state.clock.elapsedTime) * 0.5))
+directionalWhite.current.position.z =  -80 -(200* (Math.sin(state.clock.elapsedTime) * 0.2))
+})
 
   return (
     <>
       {/* <OrbitControls /> */}
       {/* <PerspectiveCamera makeDefault={false} far={1000} near={0.1} fov={53.702} position={[-18.127, 22.503, 165.837]} rotation={[-0.195, -0.034, -0.007]} /> */}
-      <PerspectiveCamera makeDefault far={1000} near={0.1} fov={53.702} position={[0,40,170]} rotation={[-0.3,0,0]} />
+      <PerspectiveCamera  makeDefault far={1000} near={0.1} fov={53.702} position={[0,40,170]} rotation={[-0.3,0,0]} />
       <directionalLight color={"#6d00fb"} ref={directionalPurple} intensity={5} position={[160, 16, -40]}/>
       <directionalLight color={"#9e00c6"} ref={directionalPink} intensity={5} position={[0,70,-100]}/>
       <directionalLight color={"#fff"} ref={directionalWhite} intensity={2} position={[36, 20, -80]}/>
-      <ScrollControls pages={5} damping={0.25}>
-      <Crystal top={top}/>
-      </ScrollControls>
+      <Crystal/>
     </>
   );
 };

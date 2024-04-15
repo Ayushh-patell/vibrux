@@ -8,7 +8,7 @@ import FaqItem from "./FaqItems";
 import { FaqData, FaqData2 } from "./FaqData";
 import { useScroll } from "@react-three/drei";
 
-function Overlay({settop, top}) {
+function Overlay() {
   const [Slide, setSlide] = useState(1);
   const appRef = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -189,7 +189,7 @@ const JoinHoverC = () => {
 
 }
   return (
-    <div ref={appRef} id="App" className="App text-center pointer-events-none">
+    <div ref={appRef} id="App" className="App text-center">
       <NavBar />
       <main className=" text-white w-screen overflow-hidden">
         <section className=" h-dvh w-full flex flex-col justify-center items-center font-chakra">
@@ -482,7 +482,7 @@ const JoinHoverC = () => {
           <div className=" my-32 mt-48 grid grid-cols-3 lg:gap-7">
             <div className=" flex flex-col justify-between items-start">
               <p className=" text-gray-500">Struct finance 2023</p>
-              <p onClick={() => {settop(!top)}} className=" text-white tracking-[6px] pointer-events-auto cursor-pointer">BACK TO TOP</p>
+              <p onClick={() => {window.scrollTo({top:0, behavior:"smooth"})}} className=" text-white tracking-[6px] pointer-events-auto cursor-pointer">BACK TO TOP</p>
             </div>
 
             <div> 
