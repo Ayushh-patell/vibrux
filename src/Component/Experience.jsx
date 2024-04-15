@@ -14,17 +14,17 @@ const { camera, gl, scene } = useThree();
 
 
 useFrame((state) => {
-directionalPurple.current.position.x = 160 -(80 * (Math.sin(state.clock.elapsedTime) * 0.3))
-directionalPurple.current.position.y = 16 -(80 * (Math.sin(state.clock.elapsedTime) * 0.3))
-directionalPurple.current.position.z =  -40 -(160* (Math.sin(state.clock.elapsedTime) * 0.3))
+directionalPurple.current.position.x = 160 -(200 * (Math.sin(state.clock.elapsedTime) * 0.03))
+directionalPurple.current.position.y = 16 -(80 * (Math.sin(state.clock.elapsedTime) * 0.03))
+directionalPurple.current.position.z =  -40 -(160* (Math.sin(state.clock.elapsedTime) * 0.03))
 
 directionalPink.current.position.x = 0 -(160 * (Math.sin(state.clock.elapsedTime) * 0.3))
 directionalPink.current.position.y = 70 -(80 * (Math.sin(state.clock.elapsedTime) * 0.3))
 directionalPink.current.position.z =  -100 -(80* (Math.sin(state.clock.elapsedTime) * 0.3))
 
-directionalWhite.current.position.x = 36 -(20 * (Math.sin(state.clock.elapsedTime) * 0.3))
-directionalWhite.current.position.y = 20 -(10 * (Math.sin(state.clock.elapsedTime) * 0.5))
-directionalWhite.current.position.z =  -80 -(200* (Math.sin(state.clock.elapsedTime) * 0.2))
+directionalWhite.current.position.x = 36 -(10 * (Math.sin(state.clock.elapsedTime) * 0.05))
+directionalWhite.current.position.y = 20 -(10 * (Math.sin(state.clock.elapsedTime) * 0.05))
+directionalWhite.current.position.z =  -80 -(200* (Math.sin(state.clock.elapsedTime) * 0.05))
 })
 
   return (
