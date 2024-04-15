@@ -1,4 +1,9 @@
 
+* {
+  scroll-behavior: smooth;
+  scroll-margin: 10rem;
+}
+
 .font-chakra {
     font-family: "Chakra Petch", sans-serif;
   }
@@ -46,4 +51,16 @@
   left: 0px;
   }
 
+  .cardBg {
+    animation: Card 5s linear infinite alternate;
+  }
+
+  @keyframes Card {
+    from {
+      top: 0%;
+    }
+    to {
+      top: -100%;
+    }
+  }
  

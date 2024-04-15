@@ -1,15 +1,16 @@
-import { OrbitControls, PerspectiveCamera, ScrollControls, useHelper, useScroll } from "@react-three/drei";
-import React, { useEffect, useRef } from "react";
+import { PerspectiveCamera } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import React, { useRef } from "react";
 import { Crystal } from "./Crystal";
-import { useControls } from "leva";
-import { DirectionalLightHelper } from "three";
-import Overlay from "./Overlay";
-import { useFrame } from "@react-three/fiber";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 const Experience = () => {
 const directionalPurple = useRef()
 const directionalPink = useRef()
 const directionalWhite = useRef()
+const composer = useRef();
+
+const { camera, gl, scene } = useThree();
 
 
 useFrame((state) => {
@@ -35,6 +36,10 @@ directionalWhite.current.position.z =  -80 -(200* (Math.sin(state.clock.elapsedT
       <directionalLight color={"#9e00c6"} ref={directionalPink} intensity={5} position={[0,70,-100]}/>
       <directionalLight color={"#fff"} ref={directionalWhite} intensity={2} position={[36, 20, -80]}/>
       <Crystal/>
+      <EffectComposer ref={composer} args={[gl]}>
+        {/* <Render attachArray="passes" scene={scene} camera={camera} /> */}
+        <Bloom attachArray="passes" strength={5} />
+      </EffectComposer>
     </>
   );
 };

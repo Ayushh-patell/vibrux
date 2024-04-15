@@ -1,12 +1,12 @@
 import { useGSAP } from "@gsap/react";
-import "../App.css";
-import NavBar from "./NavBar";
-import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import FaqItem from "./FaqItems";
+import { useRef, useState } from "react";
+import "../App.css";
 import { FaqData, FaqData2 } from "./FaqData";
-import { useScroll } from "@react-three/drei";
+import FaqItem from "./FaqItems";
+import NavBar from "./NavBar";
+import { Link } from "react-router-dom";
 
 function Overlay() {
   const [Slide, setSlide] = useState(1);
@@ -201,10 +201,12 @@ const JoinHoverC = () => {
               <p className=" my-3 text-lg tracking-widest">
                 Predictable and Enhanced Returns at Your Fingertips
               </p>
+              <Link to={"/dashboard"}>
               <button className=" pointer-events-auto px-7 py-3 bg-[#9656ff] rounded-sm text-white group/btn hover:text-black font-semibold transition-[color] duration-100 ease-out tracking-[6px] my-5 relative">
                 <span className=" relative z-10">LAUNCH APP</span>{" "}
                 <div className=" transition-all duration-200 ease-[cubic-bezier(.19,1,.22,1)] absolute top-0 left-0 w-full h-full scale-y-0 bg-white group-hover/btn:scale-y-100"></div>
               </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -212,7 +214,7 @@ const JoinHoverC = () => {
         <section className=" h-dvh w-full flex flex-col justify-center items-center font-chakra">
           <div className=" blurText">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
-              <h1 className=" max-w-6xl text-8xl px-10 text-center">
+              <h1 id="resource" className=" max-w-6xl text-8xl px-10 text-center">
                 CHOOSE FIXED OR ENHANCED RETURNS
               </h1>
               <p className=" my-3 text-lg tracking-widest w-2/4 mx-auto">
@@ -373,17 +375,19 @@ const JoinHoverC = () => {
         <section className=" h-dvh w-full flex flex-col justify-center items-center font-chakra">
           <div className=" blurText">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
-              <h1 className=" max-w-6xl text-8xl px-10 text-center">
+              <h1 id="customize" className=" max-w-6xl text-8xl px-10 text-center">
                 CUSTOMIZE YOUR OWN INTEREST-RATE PRODUCTS
               </h1>
               <p className=" my-3 text-lg tracking-widest w-2/4 mx-auto">
                 Permissionlessly create your own interest-rate products using
                 our smart product factory
               </p>
+              <Link to={"/dashboard"}>
               <button className=" px-7 py-3 bg-[#9656ff] rounded-sm text-white group/btn hover:text-black font-semibold transition-[color] duration-100 ease-out tracking-[6px] my-5 relative">
                 <span className=" relative z-10">LAUNCH APP</span>{" "}
                 <div className=" transition-all duration-200 ease-[cubic-bezier(.19,1,.22,1)] absolute top-0 left-0 w-full h-full scale-y-0 bg-white group-hover/btn:scale-y-100"></div>
               </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -464,8 +468,8 @@ const JoinHoverC = () => {
           <div className=" slideRightBars origin-left w-full scale-100 h-20 bg-[#190b30]"></div>
         </section>
 
-        <footer className=" relative pt-32 px-4 pb-4 bg-[#111] mt-[50px] font-chakra">
-          <h4 className=" font-chakra text-8xl mb-10">NEWSLETTER SIGNUP</h4>
+        <footer className=" relative lg:pt-[250px] px-4 pb-4 bg-[#111] mt-[50px] font-chakra">
+          <h4 id="newsletter" className=" font-chakra text-8xl mb-10">NEWSLETTER SIGNUP</h4>
           <form className=" flex gap-2 justify-between items-center">
             <input type="text" placeholder="YOUR NAME" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 w-[37%] outline-none" />
             <input type="text" placeholder="E-MAIL ADDRESS" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 w-[37%] outline-none" />

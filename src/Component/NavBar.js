@@ -1,5 +1,6 @@
 import gsap from 'gsap'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -75,6 +76,7 @@ const NavBar = () => {
         </div>
 
         <div className=' h-full w-[100%] p-2 flex justify-center items-center'>
+             <Link to={"/dashboard"}>
              <button onMouseEnter={LaunchHover} onMouseLeave={LaunchHoverC} className='pointer-events-auto origin-center h-full w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
              <div className=' launchBG absolute bg-[#9656ff] top-0 left-0 w-full h-full rounded-sm'></div>
              <div className=' launchbar1 absolute bg-[#9656ff] top-0 left-0 w-full h-[2px] rounded-sm'></div>
@@ -86,21 +88,30 @@ const NavBar = () => {
                 <img src="../Arrow.svg" alt=" arrow" className=' absolute bottom-[45%] opacity-0 left-1/2 -translate-x-1/2 z-10 h-3 block mr-2 -rotate-90 bottomArr' />
 
              </button>
+             </Link>
         </div>
       </div>
 
       <div className=' absolute left-3 top-[5.4rem] w-[73%] h-[85%] overflow-y-scroll scrollerHidden text-left pt-5 pointer-events-auto'>
         <div className=' border-b border-gray-800 py-3 px-5'>
+            <a onClick={toggleNav} href="#resource">
             <h4 className=' text-9xl font-chakra menuText'>RESOURCES</h4>
+            </a>
         </div>
         <div className=' border-b border-gray-800 py-3 px-5'>
+            <a onClick={toggleNav} href="#customize">
             <h4 className=' text-9xl font-chakra menuText'>CUSTOMIZE</h4>
+            </a>
         </div>
         <div className=' border-b border-gray-800 py-3 px-5'>
+            <a onClick={toggleNav} href="#newsletter">
             <h4 className=' text-9xl font-chakra menuText'>NEWSLETTER</h4>
+            </a>
         </div>
         <div className=' border-b border-gray-800 py-3 px-5'>
+            <a onClick={toggleNav} href="#">
             <h4 className=' text-9xl font-chakra menuText'>FEEDBACK</h4>
+            </a>
         </div>
 
         {/* NAV FOOTER */}

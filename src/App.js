@@ -2,7 +2,6 @@ import { Canvas } from '@react-three/fiber';
 import './App.css';
 import Experience from './Component/Experience';
 import Overlay from './Component/Overlay';
-import { useState } from 'react';
 
 function App() {
 

@@ -4,12 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Leva } from 'leva';
+import Dashboard from './Dashboard';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<App/>,
+  },
+  {
+    path:"/dashboard",
+    element:<Dashboard/>
+  }
+])
 root.render(
   <React.StrictMode>
   <Leva/>
-    <App />
+ <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 );
 
