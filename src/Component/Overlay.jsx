@@ -44,12 +44,12 @@ function Overlay() {
       });
 
       gsap.to(".SlideInner", {
-        transform: "translateX(-50%)",
+        transform: window.innerWidth<1024?"translateX(-67%)":"translateX(-50%)",
         ease: "none",
         scrollTrigger: {
           trigger: ".Slide",
           start: "top 40%",
-          end: "800% 20%",
+          end: window.innerWidth<1024?"1300% 20%":"800% 20%",
           scrub: true,
           pin: true,
         },
@@ -75,7 +75,7 @@ function Overlay() {
         duration: 0.3,
         scrollTrigger: {
           trigger: ".First",
-          start: "30% 10%",
+          start: window.innerWidth<1024?"20% 10%":"30% 10%",
           end: "63% 10%",
           toggleActions: "play reverse play reverse",
           onEnter: () => {
@@ -93,7 +93,7 @@ function Overlay() {
         duration: 0.3,
         scrollTrigger: {
           trigger: ".First",
-          start: "63% 10%",
+          start: window.innerWidth<1024?"54% 10%":"63% 10%",
           end: "bottom 20%",
           toggleActions: "play reverse play reverse",
           onEnter: () => {
@@ -121,7 +121,7 @@ function Overlay() {
         duration: 0.3,
         scrollTrigger: {
           trigger: ".First",
-          start: "30% 10%",
+          start: window.innerWidth<1024?"20% 10%":"30% 10%",
           end: "63% 10%",
           toggleActions: "play reverse play reverse",
         },
@@ -133,7 +133,7 @@ function Overlay() {
         duration: 0.3,
         scrollTrigger: {
           trigger: ".First",
-          start: "63% 10%",
+          start: window.innerWidth<1024?"54% 10%":"63% 10%",
           end: "bottom 20%",
           toggleActions: "play reverse play reverse",
         },
@@ -142,6 +142,12 @@ function Overlay() {
 
       gsap.to(".slideLeftBars", {width:"100%", stagger:-0.1, scrollTrigger:{
         trigger:".slideLeftBars",
+        start:"-50% 80%",
+        end:"top 20%",
+        scrub:true
+      }})
+      gsap.to(".slideLeftBarsF", {width:"100%", stagger:-0.1, scrollTrigger:{
+        trigger:".slideLeftBarsF",
         start:"-50% 80%",
         end:"top 20%",
         scrub:true
@@ -167,6 +173,13 @@ function Overlay() {
         end:"top 30%",
         
       }})
+      gsap.to(".glowScreen", { opacity:0, duration:0.2, scrollTrigger:{
+        trigger:"#newsletter",
+        start:"top 100%",
+        end:"top 70%",
+        scrub:true
+        
+      }})
     },
     { scope: appRef }
   );
@@ -189,16 +202,16 @@ const JoinHoverC = () => {
 
 }
   return (
-    <div ref={appRef} id="App" className="App text-center">
+    <div ref={appRef} id="App" className="App text-center relative z-10">
       <NavBar />
       <main className=" text-white w-screen overflow-hidden">
         <section className=" h-dvh w-full flex flex-col justify-center items-center font-chakra">
           <div className=" blurText">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
-              <h1 className=" max-w-6xl text-8xl px-10 text-center">
+              <h1 className=" max-w-6xl lg:text-8xl text-4xl px-10 text-center">
                 DECENTRALIZING STRUCTURED FINANCE
               </h1>
-              <p className=" my-3 text-lg tracking-widest">
+              <p className=" my-3 lg:text-lg text-base tracking-widest">
                 Predictable and Enhanced Returns at Your Fingertips
               </p>
               <Link to={"/dashboard"}>
@@ -214,10 +227,10 @@ const JoinHoverC = () => {
         <section className=" h-dvh w-full flex flex-col justify-center items-center font-chakra">
           <div className=" blurText">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
-              <h1 id="resource" className=" max-w-6xl text-8xl px-10 text-center">
+              <h1 id="resource" className=" max-w-6xl lg:text-8xl text-4xl px-10 text-center">
                 CHOOSE FIXED OR ENHANCED RETURNS
               </h1>
-              <p className=" my-3 text-lg tracking-widest w-2/4 mx-auto">
+              <p className=" my-3 lg:text-lg text-base tracking-widest w-2/4 mx-auto">
                 Our Interest Rate Products divide yield-bearing assets into
                 vaults with varying levels of risk
               </p>
@@ -226,10 +239,10 @@ const JoinHoverC = () => {
         </section>
 
         <section className=" h-dvh w-full flex justify-center items-center font-chakra">
-          <div className=" blurText w-1/2 lg:pl-[150px]">
-            <div className=" blurTextI scale-125 blur-sm opacity-0 text-left">
-              <h1 className=" max-w-6xl text-8xl w-1/2">FIXED RETURNS</h1>
-              <p className=" my-3 text-lg tracking-widestw-2/4 mx-auto">
+          <div className=" blurText lg:w-1/2 lg:pl-[150px]">
+            <div className=" blurTextI scale-125 blur-sm opacity-0 text-left lg:p-0 p-5">
+              <h1 className=" max-w-6xl lg:text-8xl text-4xl lg:w-1/2">FIXED RETURNS</h1>
+              <p className=" my-3 lg:text-lg text-base tracking-widestw-2/4 mx-auto">
                 Select a fixed return option to obtain a predictable source of
                 yield. Ideal for investors who value stability above anything
                 else
@@ -279,15 +292,15 @@ const JoinHoverC = () => {
               </div>
             </div>
           </div>
-          <div className=" w-1/2"></div>
+          <div className=" lg:w-1/2"></div>
         </section>
 
         <section className=" h-dvh w-full flex justify-center items-center font-chakra">
-          <div className=" w-1/2"></div>
-          <div className=" blurText w-1/2 ">
-            <div className=" blurTextI scale-125 blur-sm opacity-0 text-left">
-              <h1 className=" max-w-6xl text-8xl w-1/2">VARIABLE RETURNS</h1>
-              <p className=" my-3 text-lg tracking-widest w-1/2">
+          <div className=" lg:w-1/2"></div>
+          <div className=" blurText lg:w-1/2 ">
+            <div className=" blurTextI scale-125 blur-sm opacity-0 text-left lg:p-0 p-5">
+              <h1 className=" max-w-6xl lg:text-8xl text-4xl lg:w-1/2">VARIABLE RETURNS</h1>
+              <p className=" my-3 lg:text-lg text-base tracking-widest lg:w-1/2">
                 Our variable return option offers amplified returns through
                 leveraged exposure to the performance of the underlying assets
               </p>
@@ -346,9 +359,10 @@ const JoinHoverC = () => {
                 <div className="SlideBar w-[33%] bg-[#80fbf7] rounded-full h-full absolute top-0 left-0"></div>
               </div>
             </div>
-            <div className="SlideInner flex justify-between items-center gap-[250px] translate-x-[33%]">
-              <div>
-                <h5 className=" text-8xl opacity-30 SlideMainText1">
+            <div className="SlideInner flex justify-between lg:w-auto w-[300vw] items-center lg:gap-[250px] lg:translate-x-[33%]">
+
+              <div className=" lg:w-auto w-screen">
+                <h5 className=" lg:text-8xl text-4xl opacity-30 SlideMainText1">
                   STRUCTURE
                 </h5>
                 <p className=" opacity-0 scale-125 blur-sm SlideText1">
@@ -356,18 +370,20 @@ const JoinHoverC = () => {
                 </p>
               </div>
 
-              <div>
-                <h5 className=" text-8xl opacity-30 SlideMainText2">DEPOSIT</h5>
+              <div className=" lg:w-auto w-screen">
+                <h5 className=" lg:text-8xl text-4xl opacity-30 SlideMainText2">DEPOSIT</h5>
                 <p className=" opacity-0 scale-125 blur-sm SlideText2">
                   Deploy assists into a vault that fits your needs
                 </p>
               </div>
-              <div>
-                <h5 className=" text-8xl opacity-30 SlideMainText3">EARN</h5>
+
+              <div className=" lg:w-auto w-screen">
+                <h5 className=" lg:text-8xl text-4xl opacity-30 SlideMainText3">EARN</h5>
                 <p className=" opacity-0 scale-125 blur-sm SlideText3">
                   Sit back and let your investment and accure yeild
                 </p>
               </div>
+
             </div>
           </div>
         </section>
@@ -375,10 +391,10 @@ const JoinHoverC = () => {
         <section className=" h-dvh w-full flex flex-col justify-center items-center font-chakra">
           <div className=" blurText">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
-              <h1 id="customize" className=" max-w-6xl text-8xl px-10 text-center">
+              <h1 id="customize" className=" max-w-6xl lg:text-8xl text-4xl px-10 text-center">
                 CUSTOMIZE YOUR OWN INTEREST-RATE PRODUCTS
               </h1>
-              <p className=" my-3 text-lg tracking-widest w-2/4 mx-auto">
+              <p className=" my-3 lg:text-lg text-base tracking-widest lg:w-2/4 mx-auto">
                 Permissionlessly create your own interest-rate products using
                 our smart product factory
               </p>
@@ -395,17 +411,17 @@ const JoinHoverC = () => {
         <section className=" h-[50vh] w-full flex flex-col justify-center items-center font-chakra">
           <div className=" blurText">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
-              <h1 className=" max-w-6xl mx-auto text-8xl px-10 text-center">
+              <h1 className=" max-w-6xl mx-auto lg:text-8xl text-4xl px-10 text-center">
                 SECURITY
               </h1>
-              <p className=" my-3 text-lg tracking-widest w-2/4 mx-auto">
+              <p className=" my-3 lg:text-lg text-base tracking-widest w-2/4 mx-auto">
                 At Struct, security comes first. Our smart contracts have been
                 rigorously tested internally and have been audited by renowned
                 industry leaders
               </p>
               <div className=" flex justify-around items-center w-1/2 mx-auto">
-                <img src="../Dedaub.svg" alt="dedaub logo" className="SecImgL h-4" />
-                <img src="../Zokyo.svg" alt="zokyo logo" className="SecImgR h-7" />
+                <img src="../Dedaub.svg" alt="dedaub logo" className="SecImgL lg:h-4 h-2" />
+                <img src="../Zokyo.svg" alt="zokyo logo" className="SecImgR lg:h-7 h-4" />
               </div>
             </div>
           </div>
@@ -416,8 +432,8 @@ const JoinHoverC = () => {
           <div className=" slideLeftBars h-20 w-0 bg-[#190b30]"></div>
           <div className=" slideLeftBars h-20 w-0 bg-[#190b30]"></div>
           <div className=" w-full bg-[#190b30]">
-            <h4 className="blurTextI blur-[2px] scale-125 opacity-0 text-8xl mt-16 my-10 font-chakra">BACKED BY</h4>
-            <div className=" w-[70%] grid grid-cols-5 gap-32 place-items-center mx-auto mt-28">
+            <h4 className="blurTextI blur-[2px] scale-125 opacity-0 lg:text-8xl text-4xl mt-16 my-10 font-chakra">BACKED BY</h4>
+            <div className=" w-[70%] grid lg:grid-cols-5 grid-cols-2 lg:gap-32 gap-12 place-items-center mx-auto mt-28">
               <img src="../1.webp" alt="" className=" h-8 object-contain" />
               <img src="../2.webp" alt="" className=" h-8 object-contain" />
               <img src="../3.webp" alt="" className=" h-8 object-contain" />
@@ -438,8 +454,13 @@ const JoinHoverC = () => {
               <img src="../18.webp" alt="" className=" h-10 object-contain" />
               <img src="../19.webp" alt="" className=" h-8 object-contain" />
               <img src="../20.webp" alt="" className=" h-8 object-contain" />
+
+              <img src="../21.webp" alt="" className=" lg:hidden h-8 object-contain" />
+              <img src="../22.webp" alt="" className=" lg:hidden h-8 object-contain" />
+              <img src="../23.webp" alt="" className=" lg:hidden h-8 object-contain" />
+              <img src="../24.webp" alt="" className=" lg:hidden h-8 object-contain" />
             </div>
-            <div className=" flex justify-center items-center gap-32 mt-24">
+            <div className=" lg:flex hidden justify-center items-center gap-32 mt-24">
               <img src="../21.webp" alt="" className=" h-8 object-contain" />
               <img src="../22.webp" alt="" className=" h-8 object-contain" />
               <img src="../23.webp" alt="" className=" h-8 object-contain" />
@@ -447,15 +468,15 @@ const JoinHoverC = () => {
 
             </div>
 
-            <h4 className="blurTextI blur-[2px] scale-125 opacity-0 text-8xl mt-16 my-10 pt-20 font-chakra">F.A.Q.</h4>
+            <h4 className="blurTextI blur-[2px] scale-125 opacity-0 lg:text-8xl text-4xl mt-16 my-10 pt-20 font-chakra">F.A.Q.</h4>
 
-            <div className=" w-full flex justify-between items-start pb-32">
-              <div className=" w-1/2 bg-[#45404d] p-px flex flex-col justify-center items-center gap-[1px]">
+            <div className=" w-full flex lg:flex-row flex-col justify-between items-start pb-32">
+              <div className=" lg:w-1/2 w-full bg-[#45404d] p-px lg:pb-px flex flex-col justify-center items-center gap-[1px]">
                {FaqData.map((faq,i) => (
                 <FaqItem key={i} faq={faq}/>
                ))}
               </div>
-              <div className=" w-1/2 bg-[#45404d] p-px pl-0 flex flex-col justify-center items-center gap-[1px]">
+              <div className=" lg:w-1/2 w-full bg-[#45404d] p-px lg:pl-0 flex flex-col justify-center items-center gap-[1px]">
                {FaqData2.map((faq,i) => (
                 <FaqItem key={i} faq={faq}/>
                ))}
@@ -463,18 +484,20 @@ const JoinHoverC = () => {
             </div>
 
           </div>
-          <div className=" slideRightBars origin-left w-full scale-100 h-20 bg-[#190b30]"></div>
-          <div className=" slideRightBars origin-left w-full scale-100 h-20 bg-[#190b30]"></div>
-          <div className=" slideRightBars origin-left w-full scale-100 h-20 bg-[#190b30]"></div>
         </section>
 
-        <footer className=" relative lg:pt-[250px] px-4 pb-4 bg-[#111] mt-[50px] font-chakra">
-          <h4 id="newsletter" className=" font-chakra text-8xl mb-10">NEWSLETTER SIGNUP</h4>
-          <form className=" flex gap-2 justify-between items-center">
-            <input type="text" placeholder="YOUR NAME" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 w-[37%] outline-none" />
-            <input type="text" placeholder="E-MAIL ADDRESS" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 w-[37%] outline-none" />
+          <div className=" flex flex-col justify-end items-end bg-[#190b30]" aria-hidden>
+          <div className=" slideLeftBarsF origin-right w-0 scale-100 h-20 bg-[#111]"></div>
+          <div className=" slideLeftBarsF origin-right w-0 scale-100 h-20 bg-[#111]"></div>
+          <div className=" slideLeftBarsF origin-right w-0 scale-100 h-20 bg-[#111]"></div>
+          </div>
+        <footer className=" relative lg:pt-[250px] px-4 pb-4 bg-[#111] font-chakra">
+          <h4 id="newsletter" className=" font-chakra lg:text-8xl text-4xl mb-10">NEWSLETTER SIGNUP</h4>
+          <form className=" flex gap-2 lg:flex-row flex-col justify-between items-center">
+            <input type="text" placeholder="YOUR NAME" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 lg:w-[37%] w-full outline-none" />
+            <input type="text" placeholder="E-MAIL ADDRESS" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 lg:w-[37%] w-full outline-none" />
 
-            <button onMouseEnter={JoinHover} onMouseLeave={JoinHoverC} className=' origin-center h-full w-[25%] px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
+            <button onMouseEnter={JoinHover} onMouseLeave={JoinHoverC} className=' origin-center h-full lg:w-[25%] w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
              <div className=' joinBG absolute bg-[#ffffff] top-0 left-0 w-full h-full rounded-sm'></div>
              <div className=' joinbar1 absolute bg-[#ffffff] top-0 left-0 w-full h-[2px] rounded-sm'></div>
              <div className=' joinbar2 absolute bg-[#ffffff] bottom-0 left-0 w-full h-[2px] rounded-sm'></div>
@@ -482,9 +505,11 @@ const JoinHoverC = () => {
 
              </button>
           </form>
+          <p className=" lg:hidden text-gray-500 my-5">Struct finance 2023</p>
 
-          <div className=" my-32 mt-48 grid grid-cols-3 lg:gap-7">
-            <div className=" flex flex-col justify-between items-start">
+
+          <div className=" my-32 lg:mt-48 mt-12 grid lg:grid-cols-3 grid-cols-2 lg:gap-7">
+            <div className=" lg:flex hidden flex-col justify-between items-start">
               <p className=" text-gray-500">Struct finance 2023</p>
               <p onClick={() => {window.scrollTo({top:0, behavior:"smooth"})}} className=" text-white tracking-[6px] pointer-events-auto cursor-pointer">BACK TO TOP</p>
             </div>
@@ -512,8 +537,14 @@ const JoinHoverC = () => {
             </div>
             </div>
           </div>
+          <p onClick={() => {window.scrollTo({top:0, behavior:"smooth"})}} className=" text-white tracking-[6px] pointer-events-auto cursor-pointer lg:hidden">BACK TO TOP</p>
+
         </footer>
       </main>
+
+{/* GLOW EFFECT */}
+      <div id="glowMouse" aria-hidden className=" lg:block hidden pointer-events-none skew-x-[-15deg] fixed h-screen w-[70vh] bg-gradient-to-r from-transparent via-white to-transparent -translate-x-1/2 -translate-y-1/2 opacity-5 blur-3xl "></div>
+      <div aria-hidden className=" glowScreen pointer-events-none w-screen h-screen fixed top-0 left-0 bg-[#9e00c613] blur-lg"></div>
     </div>
   );
 }

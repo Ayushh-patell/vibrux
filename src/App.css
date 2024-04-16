@@ -64,3 +64,34 @@
     }
   }
  
+
+  label {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .regular-checkbox {
+    display: none;
+  }
+  
+  .regular-checkbox + label {
+    background-color: #3a393d;;
+    padding: 9px;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  
+  .regular-checkbox:checked + label:after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: white;
+  }
+  

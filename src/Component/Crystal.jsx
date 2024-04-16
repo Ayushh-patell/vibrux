@@ -42,12 +42,14 @@ export function Crystal(props) {
   const ScreenY = window.innerHeight
   
   const Mousetrack = (e) => {
+    const glowMouse = document.getElementById("glowMouse")
     const MouseX = e.clientX
     const MouseY = e.clientY
+    glowMouse.style.top = `${MouseY}px`
+    glowMouse.style.left = `${MouseX}px`
   
     // ROTATE THE CRYSTALS ACCOORDING TO THE MOUSE MOVEMENT
     const CalcValX = ((2*MouseX)/ScreenX)-1
-    console.log(CalcValX)
     CryRef.current.rotation.y = 0.005*CalcValX
     // CryRef.current.rotation.z = -0.005*CalcValX
   
@@ -104,12 +106,12 @@ if(nodes[i].material) {
     tl.current.to(ref.current.position, {duration:1, z:110,},1)
     tl.current.to(ref.current.rotation, {duration:0.95, x:1, ease:"power1.in"},1.05)
     // PART 3 CRYSTAL 1 ANIMATION IN AND OUT
-    tl.current.to(Cry.current.position, {duration:1.2, x:28,y:-14,z:-21,},1.1)
+    tl.current.to(Cry.current.position, {duration:1.2, x:window.innerWidth<1024?"5":"28",y:-14,z:-21,},1.1)
     tl.current.to(Cry.current.rotation, {duration:1.2, x:-1.3,y:8,z:0.1,},1.1)
     tl.current.to(Cry.current.rotation, {duration:1, x:0,y:0,z:0.33},2.3)
     tl.current.to(Cry.current.position, {duration:1, x:65,y:7,z:-14},2.3)
     // PART 4 CRYTSTAL 2 ANIMATION IN AND OUT
-    tl.current.to(Cry2.current.position, {duration:0.8, x:-14,y:7,z:-14},2.6)
+    tl.current.to(Cry2.current.position, {duration:0.8, x:window.innerWidth<1024?"-4":"-14",y:7,z:-14},2.6)
     tl.current.to(Cry2.current.rotation, {duration:0.1, x:-1.4,y:0,z:1.35},2.6)
     tl.current.to(Cry2.current.rotation, {duration:0.7, x:-1.4,y:0,z:0},2.7)
     tl.current.to(Cry2.current.position, {duration:1, x:-70,y:7,z:14},3.4)
@@ -151,7 +153,7 @@ if(nodes[i].material) {
    tl2.current.from(CryP13.current.rotation, {duration:3, x:0,y:0,z:0},5)
    
    
-   tl2.current.to(CryP.current.position, {duration:0.8, x:0,y:30,z:170},8)
+   tl2.current.to(CryP.current.position, {duration:0.8, x:0,y:30,z:160},8)
 
     
   },[])

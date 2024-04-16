@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
     gsap.registerPlugin()
     const [NavOpen, setNavOpen] = useState(false)
+    const [Nav, setNav] = useState(0)
 
     const toggleNav = () => {
         if(NavOpen) {
@@ -25,7 +26,7 @@ const NavBar = () => {
             gsap.to(".menu", { height:"1px", duration:0.1})
             gsap.to(".MainNav", { backgroundColor:"#111", duration:0.2})
             gsap.to(".MainNav", { height:"100vh", duration:0.5})
-            gsap.to(".sideArr", {x:20, opacity:0, width:0, duration:0.1})
+            gsap.to(".sideArr", {x:20, opacity:window.innerWidth<1024?"1":"0", width:window.innerWidth<1024?"auto":"0", duration:0.1})
             gsap.to(".topArr", {opacity:1})
             gsap.to(".bottomArr", {opacity:1})
         }
@@ -75,8 +76,8 @@ const NavBar = () => {
         </div>
         </div>
 
-        <div className=' h-full w-[100%] p-2 flex justify-center items-center'>
-             <Link to={"/dashboard"}>
+        <div className=' h-full w-[100%] p-2 lg:flex hidden justify-center items-center'>
+             <Link className=' h-full w-full ' to={"/dashboard"}>
              <button onMouseEnter={LaunchHover} onMouseLeave={LaunchHoverC} className='pointer-events-auto origin-center h-full w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
              <div className=' launchBG absolute bg-[#9656ff] top-0 left-0 w-full h-full rounded-sm'></div>
              <div className=' launchbar1 absolute bg-[#9656ff] top-0 left-0 w-full h-[2px] rounded-sm'></div>
@@ -92,30 +93,46 @@ const NavBar = () => {
         </div>
       </div>
 
-      <div className=' absolute left-3 top-[5.4rem] w-[73%] h-[85%] overflow-y-scroll scrollerHidden text-left pt-5 pointer-events-auto'>
-        <div className=' border-b border-gray-800 py-3 px-5'>
-            <a onClick={toggleNav} href="#resource">
-            <h4 className=' text-9xl font-chakra menuText'>RESOURCES</h4>
+      <div className=' absolute lg:left-3 left-0 top-[5.4rem] lg:w-[73%] w-full max-w-[100vw] h-[85%] overflow-y-scroll scrollerHidden text-left pt-5 pointer-events-auto'>
+        <div className=' lg:border-b border-gray-800 py-3 px-5'>
+            <a onClick={()=>{toggleNav(); setNav(1)}} href="#resource">
+            <h4 className={`${Nav===1?" bg-[#9656ff!important] border-[#9656ff!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>RESOURCES</h4>
             </a>
         </div>
-        <div className=' border-b border-gray-800 py-3 px-5'>
-            <a onClick={toggleNav} href="#customize">
-            <h4 className=' text-9xl font-chakra menuText'>CUSTOMIZE</h4>
+        <div className=' lg:border-b border-gray-800 py-3 px-5'>
+            <a onClick={()=>{toggleNav(); setNav(2)}} href="#customize">
+            <h4 className={`${Nav===2?" bg-[#9656ff!important] border-[#9656ff!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>CUSTOMIZE</h4>
             </a>
         </div>
-        <div className=' border-b border-gray-800 py-3 px-5'>
-            <a onClick={toggleNav} href="#newsletter">
-            <h4 className=' text-9xl font-chakra menuText'>NEWSLETTER</h4>
+        <div className=' lg:border-b border-gray-800 py-3 px-5'>
+            <a onClick={()=>{toggleNav(); setNav(3)}} href="#newsletter">
+            <h4 className={`${Nav===3?" bg-[#9656ff!important] border-[#9656ff!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>NEWSLETTER</h4>
             </a>
         </div>
-        <div className=' border-b border-gray-800 py-3 px-5'>
-            <a onClick={toggleNav} href="#">
-            <h4 className=' text-9xl font-chakra menuText'>FEEDBACK</h4>
+        <div className=' lg:border-b border-gray-800 py-3 px-5'>
+            <a onClick={()=>{toggleNav(); setNav(0)}} href="https://feedback.struct.fi/">
+            <h4 className={`${Nav===4?" bg-[#9656ff!important] border-[#9656ff!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>FEEDBACK</h4>
             </a>
         </div>
 
+        <div className=' h-20 w-[100%] p-2 lg:hidden flex justify-center items-center'>
+             <Link className=' h-full w-full ' to={"/dashboard"}>
+             <button onMouseEnter={LaunchHover} onMouseLeave={LaunchHoverC} className='pointer-events-auto origin-center h-full w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
+             <div className=' launchBG absolute bg-[#9656ff] top-0 left-0 w-full h-full rounded-sm'></div>
+             <div className=' launchbar1 absolute bg-[#9656ff] top-0 left-0 w-full h-[2px] rounded-sm'></div>
+             <div className=' launchbar2 absolute bg-[#9656ff] bottom-0 left-0 w-full h-[2px] rounded-sm'></div>
+                <img src="../Arrow.svg" alt=" arrow" className=' relative z-10 h-3 inline-block mr-2 sideArr' />
+                <img src="../Arrow.svg" alt=" arrow" className=' absolute top-[45%] opacity-0 left-1/2 -translate-x-1/2 z-10 h-3 lg:block hidden mr-2 rotate-90 topArr' />
+                <span className=' relative z-10 tracking-[8px]'>LAUNCH</span>
+                <span className=' relative z-10 tracking-[8px]'>APP</span>
+                <img src="../Arrow.svg" alt=" arrow" className=' absolute bottom-[45%] opacity-0 left-1/2 -translate-x-1/2 z-10 h-3 lg:block hidden mr-2 -rotate-90 bottomArr' />
+
+             </button>
+             </Link>
+        </div>
+
         {/* NAV FOOTER */}
-        <div className=' w-full grid grid-cols-2 gap-2 font-chakra my-10'>
+        <div className=' w-full grid grid-cols-2 gap-2 font-chakra my-10 lg:p-0 p-5'>
             <div> 
             <p className=' text-white/30 tracking-[5px] mb-5'>PRODUCT</p>
             <div className=' w-full overflow-x-hidden text-left'>

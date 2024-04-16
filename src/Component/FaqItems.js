@@ -23,7 +23,7 @@ const FaqItem = ({faq}) => {
 
       className="cursor-pointer pointer-events-auto flex justify-between items-center p-7 pl-10"
     >
-      <span className=' text-lg'>{question}</span>
+      <span className=' text-lg text-left'>{question}</span>
       <img src="../Arrow.svg" alt="arrow" className={` h-3 transition-all ${clicked?" -rotate-90":" rotate-90"} `} />
     </p>
     <div
@@ -35,7 +35,7 @@ const FaqItem = ({faq}) => {
         }
       className={` accordianBody overflow-hidden md:text-xl transition-[height] duration-300 text-base text-left   `}
     >
-      <p id={`${question}`} className=" p-5 text-sm">
+      <p id={`${question}`} className=" text-left p-5 text-sm">
         
         
       </p>

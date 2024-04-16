@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <div className=' w-full h-screen fixed top-0 left-0 '>
+    <div className=' w-full h-screen fixed z-0 top-0 left-0 '>
     <Canvas>
       <Experience/>
     </Canvas>
