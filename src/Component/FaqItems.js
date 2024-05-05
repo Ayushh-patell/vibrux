@@ -17,7 +17,7 @@ const FaqItem = ({faq}) => {
 
 
   return (
-    <div className=" w-full bg-[#190b30] font-chakra">
+    <div className=" w-full bg-[#020042] font-chakra">
     <p
     onClick={handleToggle}
 

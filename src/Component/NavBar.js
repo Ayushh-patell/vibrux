@@ -67,7 +67,8 @@ const NavBar = () => {
 
   return (
     <nav className=' MainNav fixed z-50 top-0 left-0 w-full flex justify-between px-5 pr-3 py-1 items-start text-white overflow-hidden'>
-      <img src="../logo.svg" alt="Struct Logo" className=' h-5 mt-6' />
+      {/* <img src="../logo.svg" alt="Struct Logo" className=' h-5 mt-6' /> */}
+      <p className=' text-2xl font-chakra'>VIBREX</p>
       <div className=' flex  justify-end items-start w-[30%] h-full gap-3'>
         <div onClick={toggleNav} className='pointer-events-auto flex justify-center cursor-pointer items-center h-8 py-9'>
         <div onMouseEnter={NavHover} onMouseLeave={NavHoverC} title='Open Menu' className={` menu w-14 h-4 flex flex-col justify-between items-center  transition-[height] duration-200 ease-out`}>
@@ -77,11 +78,11 @@ const NavBar = () => {
         </div>
 
         <div className=' h-full w-[100%] p-2 lg:flex hidden justify-center items-center'>
-             <Link className=' h-full w-full ' to={"/dashboard"}>
+             <Link className=' h-full w-full ' to={"/market"}>
              <button onMouseEnter={LaunchHover} onMouseLeave={LaunchHoverC} className='pointer-events-auto origin-center h-full w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
-             <div className=' launchBG absolute bg-[#9656ff] top-0 left-0 w-full h-full rounded-sm'></div>
-             <div className=' launchbar1 absolute bg-[#9656ff] top-0 left-0 w-full h-[2px] rounded-sm'></div>
-             <div className=' launchbar2 absolute bg-[#9656ff] bottom-0 left-0 w-full h-[2px] rounded-sm'></div>
+             <div className=' launchBG absolute bg-[#0901eb] top-0 left-0 w-full h-full rounded-sm'></div>
+             <div className=' launchbar1 absolute bg-[#0901eb] top-0 left-0 w-full h-[2px] rounded-sm'></div>
+             <div className=' launchbar2 absolute bg-[#0901eb] bottom-0 left-0 w-full h-[2px] rounded-sm'></div>
                 <img src="../Arrow.svg" alt=" arrow" className=' relative z-10 h-3 inline-block mr-2 sideArr' />
                 <img src="../Arrow.svg" alt=" arrow" className=' absolute top-[45%] opacity-0 left-1/2 -translate-x-1/2 z-10 h-3 block mr-2 rotate-90 topArr' />
                 <span className=' relative z-10 tracking-[8px]'>LAUNCH</span>
@@ -96,31 +97,31 @@ const NavBar = () => {
       <div className=' absolute lg:left-3 left-0 top-[5.4rem] lg:w-[73%] w-full max-w-[100vw] h-[85%] overflow-y-scroll scrollerHidden text-left pt-5 pointer-events-auto'>
         <div className=' lg:border-b border-gray-800 py-3 px-5'>
             <a onClick={()=>{toggleNav(); setNav(1)}} href="#resource">
-            <h4 className={`${Nav===1?" bg-[#9656ff!important] border-[#9656ff!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>RESOURCES</h4>
+            <h4 className={`${Nav===1?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>RESOURCES</h4>
             </a>
         </div>
         <div className=' lg:border-b border-gray-800 py-3 px-5'>
             <a onClick={()=>{toggleNav(); setNav(2)}} href="#customize">
-            <h4 className={`${Nav===2?" bg-[#9656ff!important] border-[#9656ff!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>CUSTOMIZE</h4>
+            <h4 className={`${Nav===2?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>CUSTOMIZE</h4>
             </a>
         </div>
         <div className=' lg:border-b border-gray-800 py-3 px-5'>
             <a onClick={()=>{toggleNav(); setNav(3)}} href="#newsletter">
-            <h4 className={`${Nav===3?" bg-[#9656ff!important] border-[#9656ff!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>NEWSLETTER</h4>
+            <h4 className={`${Nav===3?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>NEWSLETTER</h4>
             </a>
         </div>
         <div className=' lg:border-b border-gray-800 py-3 px-5'>
             <a onClick={()=>{toggleNav(); setNav(0)}} href="https://feedback.struct.fi/">
-            <h4 className={`${Nav===4?" bg-[#9656ff!important] border-[#9656ff!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>FEEDBACK</h4>
+            <h4 className={`${Nav===4?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>FEEDBACK</h4>
             </a>
         </div>
 
         <div className=' h-20 w-[100%] p-2 lg:hidden flex justify-center items-center'>
-             <Link className=' h-full w-full ' to={"/dashboard"}>
+             <Link className=' h-full w-full ' to={"/market"}>
              <button onMouseEnter={LaunchHover} onMouseLeave={LaunchHoverC} className='pointer-events-auto origin-center h-full w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
-             <div className=' launchBG absolute bg-[#9656ff] top-0 left-0 w-full h-full rounded-sm'></div>
-             <div className=' launchbar1 absolute bg-[#9656ff] top-0 left-0 w-full h-[2px] rounded-sm'></div>
-             <div className=' launchbar2 absolute bg-[#9656ff] bottom-0 left-0 w-full h-[2px] rounded-sm'></div>
+             <div className=' launchBG absolute bg-[#0901eb] top-0 left-0 w-full h-full rounded-sm'></div>
+             <div className=' launchbar1 absolute bg-[#0901eb] top-0 left-0 w-full h-[2px] rounded-sm'></div>
+             <div className=' launchbar2 absolute bg-[#0901eb] bottom-0 left-0 w-full h-[2px] rounded-sm'></div>
                 <img src="../Arrow.svg" alt=" arrow" className=' relative z-10 h-3 inline-block mr-2 sideArr' />
                 <img src="../Arrow.svg" alt=" arrow" className=' absolute top-[45%] opacity-0 left-1/2 -translate-x-1/2 z-10 h-3 lg:block hidden mr-2 rotate-90 topArr' />
                 <span className=' relative z-10 tracking-[8px]'>LAUNCH</span>

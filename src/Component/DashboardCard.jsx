@@ -11,7 +11,7 @@ const DashboardCard = ({data}) => {
     <div className=' rounded-2xl overflow-hidden brightness-[0.7] hover:brightness-100 hover:-translate-y-2 transition-all duration-150'>
       <div className=' p-4 flex justify-between items-center pb-10 relative overflow-hidden'>
       <div className=' cardBg absolute z-0 top-0 left-0 h-[200%] w-full' style={{backgroundImage:`linear-gradient(180deg,${tokenColor1}, ${tokenColor2}`}}></div>
-        <div className=' relative z-10 flex gap-2 justify-start items-center'> <img src={`../${data.platform==="TraderJoe"?"traderjoe":"gmx"}.svg`} alt="trader joe" className=' h-5' /> <p>{data.platform}</p></div>
+        {/* <div className=' relative z-10 flex gap-2 justify-start items-center'> <img src={`../${data.platform==="TraderJoe"?"traderjoe":"gmx"}.svg`} alt="trader joe" className=' h-5' /> <p>{data.platform}</p></div> */}
         <p className=' relative z-10 text-white/60'>TVL:<span className=' ml-1 text-white'>{data.TVL}</span></p>
         
       </div>

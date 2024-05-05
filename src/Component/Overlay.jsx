@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 function Overlay() {
   const [Slide, setSlide] = useState(1);
+  const [joined, setjoined] = useState(false);
   const appRef = useRef();
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(
@@ -197,9 +198,27 @@ const JoinHoverC = () => {
         gsap.to(".joinbar1", {top:'0px', duration:0.3, ease:"power.out"})
         gsap.to(".joinbar2", {bottom:"0px", duration:0.3, ease:"power.out"})
         gsap.to(".joinText", {color:"black", duration:0.3, ease:"power.out"})
+}
 
+const handleEmail = (e) => {
+  let email = e.target.value
+  let valid = document.getElementById("valid")
+  let join = document.getElementById("join")
+  if(/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm.test(email)){
+    valid.innerText = "";
+    join.style.pointerEvents = "all"
+  }
+  else {
+    valid.innerText = "Invalid Email"
+    join.style.pointerEvents = "none"
+  }
 
-
+}
+const handleJoin = () => {  
+  let email = document.getElementById("email").value
+  document.getElementById("joined").innerText = `Thank you for subscribing to our newsletter. We'll keep you posted on our status. Thank you for your support! ${email}`
+  document.getElementById("newsletter").innerText = `THANKS FOR JOINING`
+  setjoined(true)
 }
   return (
     <div ref={appRef} id="App" className="App text-center relative z-10">
@@ -214,8 +233,8 @@ const JoinHoverC = () => {
               <p className=" my-3 lg:text-lg text-base tracking-widest">
                 Predictable and Enhanced Returns at Your Fingertips
               </p>
-              <Link to={"/dashboard"}>
-              <button className=" pointer-events-auto px-7 py-3 bg-[#9656ff] rounded-sm text-white group/btn hover:text-black font-semibold transition-[color] duration-100 ease-out tracking-[6px] my-5 relative">
+              <Link to={"/market"}>
+              <button className=" pointer-events-auto px-7 py-3 bg-[#0901eb] rounded-sm text-white group/btn hover:text-black font-semibold transition-[color] duration-100 ease-out tracking-[6px] my-5 relative">
                 <span className=" relative z-10">LAUNCH APP</span>{" "}
                 <div className=" transition-all duration-200 ease-[cubic-bezier(.19,1,.22,1)] absolute top-0 left-0 w-full h-full scale-y-0 bg-white group-hover/btn:scale-y-100"></div>
               </button>
@@ -398,8 +417,8 @@ const JoinHoverC = () => {
                 Permissionlessly create your own interest-rate products using
                 our smart product factory
               </p>
-              <Link to={"/dashboard"}>
-              <button className=" px-7 py-3 bg-[#9656ff] rounded-sm text-white group/btn hover:text-black font-semibold transition-[color] duration-100 ease-out tracking-[6px] my-5 relative">
+              <Link to={"/market"}>
+              <button className=" px-7 py-3 bg-[#0901eb] rounded-sm text-white group/btn hover:text-black font-semibold transition-[color] duration-100 ease-out tracking-[6px] my-5 relative">
                 <span className=" relative z-10">LAUNCH APP</span>{" "}
                 <div className=" transition-all duration-200 ease-[cubic-bezier(.19,1,.22,1)] absolute top-0 left-0 w-full h-full scale-y-0 bg-white group-hover/btn:scale-y-100"></div>
               </button>
@@ -408,65 +427,12 @@ const JoinHoverC = () => {
           </div>
         </section>
 
-        <section className=" h-[50vh] w-full flex flex-col justify-center items-center font-chakra">
-          <div className=" blurText">
-            <div className=" blurTextI scale-125 blur-sm opacity-0">
-              <h1 className=" max-w-6xl mx-auto lg:text-8xl text-4xl px-10 text-center">
-                SECURITY
-              </h1>
-              <p className=" my-3 lg:text-lg text-base tracking-widest w-2/4 mx-auto">
-                At Struct, security comes first. Our smart contracts have been
-                rigorously tested internally and have been audited by renowned
-                industry leaders
-              </p>
-              <div className=" flex justify-around items-center w-1/2 mx-auto">
-                <img src="../Dedaub.svg" alt="dedaub logo" className="SecImgL lg:h-4 h-2" />
-                <img src="../Zokyo.svg" alt="zokyo logo" className="SecImgR lg:h-7 h-4" />
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className=" flex flex-col justify-start items-end">
-          <div className=" slideLeftBars h-20 w-0 bg-[#190b30]"></div>
-          <div className=" slideLeftBars h-20 w-0 bg-[#190b30]"></div>
-          <div className=" slideLeftBars h-20 w-0 bg-[#190b30]"></div>
-          <div className=" w-full bg-[#190b30]">
-            <h4 className="blurTextI blur-[2px] scale-125 opacity-0 lg:text-8xl text-4xl mt-16 my-10 font-chakra">BACKED BY</h4>
-            <div className=" w-[70%] grid lg:grid-cols-5 grid-cols-2 lg:gap-32 gap-12 place-items-center mx-auto mt-28">
-              <img src="../1.webp" alt="" className=" h-8 object-contain" />
-              <img src="../2.webp" alt="" className=" h-8 object-contain" />
-              <img src="../3.webp" alt="" className=" h-8 object-contain" />
-              <img src="../4.webp" alt="" className=" h-8 object-contain" />
-              <img src="../5.webp" alt="" className=" h-8 object-contain" />
-              <img src="../6.webp" alt="" className=" h-8 object-contain" />
-              <img src="../7.webp" alt="" className=" h-8 object-contain" />
-              <img src="../8.webp" alt="" className=" h-8 object-contain" />
-              <img src="../9.webp" alt="" className=" h-8 object-contain" />
-              <img src="../10.webp" alt="" className=" h-8 object-contain" />
-              <img src="../11.webp" alt="" className=" h-8 object-contain" />
-              <img src="../12.webp" alt="" className=" h-8 object-contain" />
-              <img src="../13.webp" alt="" className=" h-8 object-contain" />
-              <img src="../14.webp" alt="" className=" h-8 object-contain" />
-              <img src="../15.webp" alt="" className=" h-8 object-contain" />
-              <img src="../16.webp" alt="" className=" h-8 object-contain" />
-              <img src="../17.webp" alt="" className=" h-8 object-contain" />
-              <img src="../18.webp" alt="" className=" h-10 object-contain" />
-              <img src="../19.webp" alt="" className=" h-8 object-contain" />
-              <img src="../20.webp" alt="" className=" h-8 object-contain" />
+          <div className=" slideLeftBars h-20 w-0 bg-[#020042]"></div>
+          <div className=" slideLeftBars h-20 w-0 bg-[#020042]"></div>
+          <div className=" slideLeftBars h-20 w-0 bg-[#020042]"></div>
+          <div className=" w-full bg-[#020042]">
 
-              <img src="../21.webp" alt="" className=" lg:hidden h-8 object-contain" />
-              <img src="../22.webp" alt="" className=" lg:hidden h-8 object-contain" />
-              <img src="../23.webp" alt="" className=" lg:hidden h-8 object-contain" />
-              <img src="../24.webp" alt="" className=" lg:hidden h-8 object-contain" />
-            </div>
-            <div className=" lg:flex hidden justify-center items-center gap-32 mt-24">
-              <img src="../21.webp" alt="" className=" h-8 object-contain" />
-              <img src="../22.webp" alt="" className=" h-8 object-contain" />
-              <img src="../23.webp" alt="" className=" h-8 object-contain" />
-              <img src="../24.webp" alt="" className=" h-8 object-contain" />
-
-            </div>
 
             <h4 className="blurTextI blur-[2px] scale-125 opacity-0 lg:text-8xl text-4xl mt-16 my-10 pt-20 font-chakra">F.A.Q.</h4>
 
@@ -486,18 +452,23 @@ const JoinHoverC = () => {
           </div>
         </section>
 
-          <div className=" flex flex-col justify-end items-end bg-[#190b30]" aria-hidden>
+          <div className=" flex flex-col justify-end items-end bg-[#020042]" aria-hidden>
           <div className=" slideLeftBarsF origin-right w-0 scale-100 h-20 bg-[#111]"></div>
           <div className=" slideLeftBarsF origin-right w-0 scale-100 h-20 bg-[#111]"></div>
           <div className=" slideLeftBarsF origin-right w-0 scale-100 h-20 bg-[#111]"></div>
           </div>
         <footer className=" relative lg:pt-[250px] px-4 pb-4 bg-[#111] font-chakra">
           <h4 id="newsletter" className=" font-chakra lg:text-8xl text-4xl mb-10">NEWSLETTER SIGNUP</h4>
-          <form className=" flex gap-2 lg:flex-row flex-col justify-between items-center">
-            <input type="text" placeholder="YOUR NAME" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 lg:w-[37%] w-full outline-none" />
-            <input type="text" placeholder="E-MAIL ADDRESS" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 lg:w-[37%] w-full outline-none" />
+          <p id="joined"></p>
+          {!joined &&
+          <form onSubmit={(e) => {e.preventDefault(); handleJoin()}} className=" flex lg:gap-2 gap-5 lg:flex-row flex-col justify-between items-center">
+            <input required type="text" placeholder="YOUR NAME" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 lg:w-[37%] w-full outline-none" />
+            <div className=" lg:w-[37%] w-full relative">
+            <input required type="email" id="email" onChange={handleEmail} placeholder="E-MAIL ADDRESS" className=" font-chakra text-xl text-white border-b-2 border-gray-600 bg-transparent px-5 py-2 w-full outline-none" />
+               <p id="valid" className=" absolute lg:-bottom-10 -bottom-6 left-2 text-red-600"></p>
+            </div>
 
-            <button onMouseEnter={JoinHover} onMouseLeave={JoinHoverC} className=' origin-center h-full lg:w-[25%] w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
+            <button id="join" type="submit" onMouseEnter={JoinHover} onMouseLeave={JoinHoverC} className=' origin-center h-full lg:w-[25%] w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
              <div className=' joinBG absolute bg-[#ffffff] top-0 left-0 w-full h-full rounded-sm'></div>
              <div className=' joinbar1 absolute bg-[#ffffff] top-0 left-0 w-full h-[2px] rounded-sm'></div>
              <div className=' joinbar2 absolute bg-[#ffffff] bottom-0 left-0 w-full h-[2px] rounded-sm'></div>
@@ -505,6 +476,7 @@ const JoinHoverC = () => {
 
              </button>
           </form>
+          }
           <p className=" lg:hidden text-gray-500 my-5">Struct finance 2023</p>
 
 

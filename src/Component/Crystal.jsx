@@ -85,9 +85,9 @@ export function Crystal(props) {
 if(nodes[i].material) {
   const phongMaterial = new THREE.MeshPhongMaterial({
     color: nodes[i].material.color, // Set color
-    specular: "#9e00c6", // Set specular color
+    specular: "#0901eb", // Set specular color
     shininess: 100, // Set shininess (if needed)
-    emissive:"#10001B",
+    emissive:"#02003e",
     // Set any other properties specific to MeshPhongMaterial as needed
   });
   nodes[i].material = phongMaterial;
@@ -106,54 +106,54 @@ if(nodes[i].material) {
     tl.current.to(ref.current.position, {duration:1, z:110,},1)
     tl.current.to(ref.current.rotation, {duration:0.95, x:1, ease:"power1.in"},1.05)
     // PART 3 CRYSTAL 1 ANIMATION IN AND OUT
-    tl.current.to(Cry.current.position, {duration:1.2, x:window.innerWidth<1024?"5":"28",y:-14,z:-21,},1.1)
-    tl.current.to(Cry.current.rotation, {duration:1.2, x:-1.3,y:8,z:0.1,},1.1)
-    tl.current.to(Cry.current.rotation, {duration:1, x:0,y:0,z:0.33},2.3)
-    tl.current.to(Cry.current.position, {duration:1, x:65,y:7,z:-14},2.3)
+    tl.current.to(Cry.current.position, {duration:1.2, x:window.innerWidth<1024?"5":"28",y:-14,z:-21,},1.5)
+    tl.current.to(Cry.current.rotation, {duration:1.2, x:-1.3,y:8,z:0.1,},1.5)
+    tl.current.to(Cry.current.rotation, {duration:1, x:0,y:0,z:0.33},2.7)
+    tl.current.to(Cry.current.position, {duration:1, x:65,y:7,z:-14},2.7)
     // PART 4 CRYTSTAL 2 ANIMATION IN AND OUT
-    tl.current.to(Cry2.current.position, {duration:0.8, x:window.innerWidth<1024?"-4":"-14",y:7,z:-14},2.6)
-    tl.current.to(Cry2.current.rotation, {duration:0.1, x:-1.4,y:0,z:1.35},2.6)
-    tl.current.to(Cry2.current.rotation, {duration:0.7, x:-1.4,y:0,z:0},2.7)
-    tl.current.to(Cry2.current.position, {duration:1, x:-70,y:7,z:14},3.4)
-    tl.current.to(Cry2.current.rotation, {duration:1, x:0,y:0,z:0, ease:"power1.in"},3.4)
+    tl.current.to(Cry2.current.position, {duration:0.8, x:window.innerWidth<1024?"-4":"-14",y:7,z:-14},3)
+    tl.current.to(Cry2.current.rotation, {duration:0.1, x:-1.4,y:0,z:1.35},3)
+    tl.current.to(Cry2.current.rotation, {duration:0.7, x:-1.4,y:0,z:0},3.1)
+    tl.current.to(Cry2.current.position, {duration:1, x:-70,y:7,z:14},3.8)
+    tl.current.to(Cry2.current.rotation, {duration:1, x:0,y:0,z:0, ease:"power1.in"},3.8)
     // PART 5 ZOOM OUT ANIMAITON OF MAIN GROUP
-    tl.current.to(ref.current.position, {duration:3.5, y:-100,z:-350, ease:"power1.in"},3.5)
-    tl.current.to(ref.current.position, {duration:2.5, y:-230,z:-1080},7)
-    tl.current.to(ref.current.rotation, {duration:6, y:0.2},3.5)
+    tl.current.to(ref.current.position, {duration:3.5, y:-100,z:-350, ease:"power1.in"},3.9)
+    tl.current.to(ref.current.position, {duration:2.5, y:-230,z:-1080},7.4)
+    tl.current.to(ref.current.rotation, {duration:6, y:0.2},3.9)
 
     // PART 6 FRAGMENTED CRYSTAL
-    tl2.current.to(CryP.current.rotation, {duration:14, x:3,y:0,z:0.5},0)
+    tl2.current.to(CryP.current.rotation, {duration:15.5, x:3,y:0,z:0.5},0)
 
-    tl2.current.from(CryP1.current.position, {duration:3, x:-70,y:7,z:14},5)
-    tl2.current.from(CryP2.current.position, {duration:3, x:-50,y:17,z:14},5)
-    tl2.current.from(CryP3.current.position, {duration:3, x:-30,y:32,z:24},5)
-    tl2.current.from(CryP4.current.position, {duration:3, x:-10,y:50,z:17},5)
-    tl2.current.from(CryP5.current.position, {duration:3, x:0,y:45,z:36},5)
-    tl2.current.from(CryP6.current.position, {duration:3, x:76,y:14,z:54},5)
-    tl2.current.from(CryP7.current.position, {duration:3, x:25,y:11,z:5},5)
-    tl2.current.from(CryP8.current.position, {duration:3, x:0,y:61,z:10},5)
-    tl2.current.from(CryP9.current.position, {duration:3, x:63,y:1,z:0},5)
-    tl2.current.from(CryP10.current.position, {duration:3, x:16,y:41,z:0},5)
-    tl2.current.from(CryP11.current.position, {duration:3, x:73,y:11,z:61},5)
-    tl2.current.from(CryP12.current.position, {duration:3, x:16,y:11,z:10},5)
-    tl2.current.from(CryP13.current.position, {duration:3, x:77,y:15,z:34},5)
+    tl2.current.from(CryP1.current.position, {duration:3, x:-70,y:7,z:14},6.8)
+    tl2.current.from(CryP2.current.position, {duration:3, x:-50,y:17,z:14},6.8)
+    tl2.current.from(CryP3.current.position, {duration:3, x:-30,y:32,z:24},6.8)
+    tl2.current.from(CryP4.current.position, {duration:3, x:-10,y:50,z:17},6.8)
+    tl2.current.from(CryP5.current.position, {duration:3, x:0,y:45,z:36},6.8)
+    tl2.current.from(CryP6.current.position, {duration:3, x:76,y:14,z:54},6.8)
+    tl2.current.from(CryP7.current.position, {duration:3, x:25,y:11,z:5},6.8)
+    tl2.current.from(CryP8.current.position, {duration:3, x:0,y:61,z:10},6.8)
+    tl2.current.from(CryP9.current.position, {duration:3, x:63,y:1,z:0},6.8)
+    tl2.current.from(CryP10.current.position, {duration:3, x:16,y:41,z:0},6.8)
+    tl2.current.from(CryP11.current.position, {duration:3, x:73,y:11,z:61},6.8)
+    tl2.current.from(CryP12.current.position, {duration:3, x:16,y:11,z:10},6.8)
+    tl2.current.from(CryP13.current.position, {duration:3, x:77,y:15,z:34},6.8)
 
 
-    tl2.current.from(CryP1.current.rotation, {duration:3, x:0,y:1,z:0},5)
-    tl2.current.from(CryP2.current.rotation, {duration:3, x:0,y:1,z:0},5)
-    tl2.current.from(CryP3.current.rotation, {duration:3, x:0,y:1,z:0},5)
-    tl2.current.from(CryP4.current.rotation, {duration:3, x:0,y:1,z:0},5)
-    tl2.current.from(CryP5.current.rotation, {duration:3, x:0,y:1,z:0},5)
-    tl2.current.from(CryP6.current.rotation, {duration:3, x:0,y:0,z:0},5)
-    tl2.current.from(CryP7.current.rotation, {duration:3, x:0,y:0,z:0},5)
-    tl2.current.from(CryP8.current.rotation, {duration:3, x:0,y:0,z:0},5)
-    tl2.current.from(CryP9.current.rotation, {duration:3, x:0,y:0,z:0},5)
-    tl2.current.from(CryP10.current.rotation, {duration:3, x:0,y:0,z:0},5)
-   tl2.current.from(CryP12.current.rotation, {duration:3, x:0,y:0,z:0},5)
-   tl2.current.from(CryP13.current.rotation, {duration:3, x:0,y:0,z:0},5)
+    tl2.current.from(CryP1.current.rotation, {duration:3, x:0,y:1,z:0},6.8)
+    tl2.current.from(CryP2.current.rotation, {duration:3, x:0,y:1,z:0},6.8)
+    tl2.current.from(CryP3.current.rotation, {duration:3, x:0,y:1,z:0},6.8)
+    tl2.current.from(CryP4.current.rotation, {duration:3, x:0,y:1,z:0},6.8)
+    tl2.current.from(CryP5.current.rotation, {duration:3, x:0,y:1,z:0},6.8)
+    tl2.current.from(CryP6.current.rotation, {duration:3, x:0,y:0,z:0},6.8)
+    tl2.current.from(CryP7.current.rotation, {duration:3, x:0,y:0,z:0},6.8)
+    tl2.current.from(CryP8.current.rotation, {duration:3, x:0,y:0,z:0},6.8)
+    tl2.current.from(CryP9.current.rotation, {duration:3, x:0,y:0,z:0},6.8)
+    tl2.current.from(CryP10.current.rotation, {duration:3, x:0,y:0,z:0},6.8)
+   tl2.current.from(CryP12.current.rotation, {duration:3, x:0,y:0,z:0},6.8)
+   tl2.current.from(CryP13.current.rotation, {duration:3, x:0,y:0,z:0},6.8)
    
    
-   tl2.current.to(CryP.current.position, {duration:0.8, x:0,y:30,z:160},8)
+   tl2.current.to(CryP.current.position, {duration:0.8, x:0,y:30,z:160},9.8)
 
     
   },[])

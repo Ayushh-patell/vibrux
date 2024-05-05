@@ -1,7 +1,7 @@
 export const DashboardData = [
     {
         platform:"TraderJoe",
-        TVL:"4,789,567,646.88",
+        TVL:"0.00",
         tokens:["sAVAX", "AVAX"],
         fixedY:"15%",
         variableY:"",
@@ -9,7 +9,7 @@ export const DashboardData = [
     },
     {
         platform:"TraderJoe",
-        TVL:"4,789,567,646.88",
+        TVL:"0.00",
         tokens:["wBTC", "BTC.B"],
         fixedY:"10%",
         variableY:"-5.44%",
@@ -17,7 +17,7 @@ export const DashboardData = [
     },
     {
         platform:"TraderJoe",
-        TVL:"789,567,646.88",
+        TVL:"0.00",
         tokens:["EURC", "USDC"],
         fixedY:"",
         variableY:"",
@@ -25,7 +25,7 @@ export const DashboardData = [
     },
     {
         platform:"TraderJoe",
-        TVL:"789,567,646.88",
+        TVL:"0.00",
         tokens:["AVAX", "USDC"],
         fixedY:"",
         variableY:"",
@@ -33,7 +33,7 @@ export const DashboardData = [
     },
     {
         platform:"GMX",
-        TVL:"789,567,646.88",
+        TVL:"0.00",
         tokens:["BTC.B", "USDC"],
         fixedY:"8%",
         variableY:"8.3%",
@@ -41,7 +41,7 @@ export const DashboardData = [
     },
     {
         platform:"GMX",
-        TVL:"89,567,646.88",
+        TVL:"0.00",
         tokens:["BTC.B", "BTC.B"],
         fixedY:"",
         variableY:"",
@@ -49,7 +49,7 @@ export const DashboardData = [
     },
     {
         platform:"TraderJoe",
-        TVL:"567,646.88",
+        TVL:"0.00",
         tokens:["BTC.B", "AVAX"],
         fixedY:"",
         variableY:"",
@@ -57,7 +57,7 @@ export const DashboardData = [
     },
     {
         platform:"GMX",
-        TVL:"567,646.88",
+        TVL:"0.00",
         tokens:["USDC", "USDC"],
         fixedY:"",
         variableY:"",
@@ -65,7 +65,7 @@ export const DashboardData = [
     },
     {
         platform:"TraderJoe",
-        TVL:"7,646.88",
+        TVL:"0.00",
         tokens:["wETH", "AVAX"],
         fixedY:"",
         variableY:"",
@@ -73,7 +73,7 @@ export const DashboardData = [
     },
     {
         platform:"GMX",
-        TVL:"7,646.88",
+        TVL:"0.00",
         tokens:["BTC.B", "wETH"],
         fixedY:"",
         variableY:"",
@@ -81,7 +81,7 @@ export const DashboardData = [
     },
     {
         platform:"GMX",
-        TVL:"646.88",
+        TVL:"0.00",
         tokens:["wETH", "USDC"],
         fixedY:"",
         variableY:"",
