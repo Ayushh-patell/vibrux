@@ -1,37 +1,32 @@
 export const FaqData = [
     {
-        question:"What is Struct finance?",
-        answer:"Struct Finance is a DeFi platform offering tailored structured financial products to cater to the distinct risk-return profiles of retail and institutional investors. Our innovative Tranching mechanism, the first in our planned lineup of product offerings, enables diversified investment opportunities across a wide array of markets through interest rate vaults."
-    },
-    {
-        question:"How to use the Interest-rate vault?",
-        answer:"Please refer to our user guide to understand how to use the product."
+        question:"What is Vibrux finance?",
+        answer:"Vibrux Finance is a DeFi platform that offers tailored financial products to suit the risk and return preferences of both individual and institutional investors. Their unique Tranching system, at the forefront of their product range, enables a wide range of investment options across various markets through interest rate vaults."
     },
     {
         question:"What is structured financial products?",
-        answer:"Structured financial products are innovative investment instruments that are derived from and linked to underlying on-chain or real-world assets. They use a variation of credit/risk, liquidity, and maturity transformation techniques to achieve specific investment goals. By offering risk-return dynamics that deviate from its underlying, these investment products ultimately appeal to a broader array of investors."
+        answer:"Structured financial products are inventive investment tools crafted from and tied to underlying on-chain or real-world assets. They employ diverse strategies such as credit/risk assessment, liquidity management, and maturity transformation to fulfill particular investment objectives. These products diverge from their underlying assets, providing unique risk-return profiles that cater to a wider range of investors.."
     },
     {
-        question:"Has struct been audited?",
-        answer:"Struct Finance have gone through three audits. Details can be found here."
+        question:"What products will Vibrux enable?",
+        answer:"Following the favorable response to our Interest Rate Vaults, we're gearing up to introduce Vibrux Auto-Pool Vaults in  2024. Moreover, we're diligently working on developing other Financial Products."
     },
 ]
 
 export const FaqData2 = [
     {
-        question:"What products are available in struct protocool?",
-        answer:"We have launched our Interest Rate Vaults built on top of GMX (GLP) and Trader Joe Auto-pools. These vaults tranche an underlying yield-bearing asset into two, creating a product that generates fixed yield, and another with enhanced exposure to the performance of the underlying asset."
+        question:"what Products are available in the Vibrux Protocol",
+        answer:"The Vibrux protocol offers Interest Rate Vaults as its primary product. These vaults divide a yield-bearing asset into two tranches, creating one product that provides a fixed yield and another with increased exposure to the performance of the underlying asset."
     },
     {
-        question:"Does struct have a token?",
-        answer:"We have not yet launched the token. We have plans to launch the Struct token in early 2024, we will keep the community updated about any progress."
-    },
-    {
-        question:"What kind of products will be available by struct?",
-        answer:"Based on the success of our Interest-rate vaults with GMX (GLP), we will be launching Struct Auto-pools Vaults in January 2024. Other Structured Financial Products are currently in development."
+        question:"Does Vibrux have its own token? ",
+        answer:"We haven't rolled out the token yet. However, we're aiming to launch the Vibrux token in early 2024. We'll keep the community informed about any developments in this regard."
     },
     {
         question:"How can I get involved?",
-        answer:"Please join us on the Discord community to get involved in different topics such as creating your instruments, building new integrations, and supporting us with ideas and features to evolve the Struct protocol. Alternatively, you can share your proposal with this email address: proposal@struct.fi"
+        answer:"To get involved, simply join our Telegram community. There, you can engage in various discussions ranging from crafting your own instruments to forging new integrations. Your support through sharing ideas and suggesting features will help in the evolution of the Vibrux protocol."
     },
 ]
+
+
+

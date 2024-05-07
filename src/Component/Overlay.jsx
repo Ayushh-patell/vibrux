@@ -40,7 +40,7 @@ function Overlay() {
             opacity: 0.5,
             scrollTrigger: {
               trigger: el,
-              start: "top 10%",
+              start: "top 5%",
               end: "top 0%",
               scrub: true,
             },
@@ -245,10 +245,10 @@ const handleJoin = () => {
           <div className=" blurText landingbox">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
               <h1 className=" max-w-6xl lg:text-8xl text-4xl px-10 text-center">
-                DECENTRALIZING STRUCTURED FINANCE
+                TRANSFORMING STRUCTURED FINANCE THROUGH DECENTRALIZATION
               </h1>
               <p className=" my-3 lg:text-lg text-base tracking-widest">
-                Predictable and Enhanced Returns at Your Fingertips
+                Stable and Amplified Returns Within Reach
               </p>
               <Link to={"/market"}>
               <button className=" pointer-events-auto px-7 py-3 bg-[#0901eb] rounded-sm text-white group/btn hover:text-black font-semibold transition-[color] duration-100 ease-out tracking-[6px] my-5 relative">
@@ -264,11 +264,10 @@ const handleJoin = () => {
           <div className=" blurText">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
               <h1 id="resource" className=" max-w-6xl lg:text-8xl text-4xl px-10 text-center">
-                CHOOSE FIXED OR ENHANCED RETURNS
+                SELECT BETWEEN STABLE OR VARIABLE RETURNS
               </h1>
               <p className=" my-3 lg:text-lg text-base tracking-widest w-2/4 mx-auto">
-                Our Interest Rate Products divide yield-bearing assets into
-                vaults with varying levels of risk
+                Our Interest Rate Products categorize yeild-bearing assets into vaults designed for diverse risk levels.
               </p>
             </div>
           </div>
@@ -279,9 +278,7 @@ const handleJoin = () => {
             <div className=" blurTextI scale-125 blur-sm opacity-0 text-left lg:p-0 p-5">
               <h1 className=" max-w-6xl lg:text-8xl text-4xl lg:w-1/2">FIXED RETURNS</h1>
               <p className=" my-3 lg:text-lg text-base tracking-widestw-2/4 mx-auto">
-                Select a fixed return option to obtain a predictable source of
-                yield. Ideal for investors who value stability above anything
-                else
+                Choose a fixed return option for a reliable yeild source, perfect for investors priortizing stability. 
               </p>
 
               <div className=" flex justify-start items-center group/link gap-5 pointer-events-auto">
@@ -337,8 +334,7 @@ const handleJoin = () => {
             <div className=" blurTextI scale-125 blur-sm opacity-0 text-left lg:p-0 p-5">
               <h1 className=" max-w-6xl lg:text-8xl text-4xl lg:w-1/2">VARIABLE RETURNS</h1>
               <p className=" my-3 lg:text-lg text-base tracking-widest lg:w-1/2">
-                Our variable return option offers amplified returns through
-                leveraged exposure to the performance of the underlying assets
+                Our variable return option provides enhanced returns by leveraging the performance of the underlying assets.
               </p>
 
               <div className=" flex justify-start items-center group/link gap-5 pointer-events-auto">
@@ -431,8 +427,7 @@ const handleJoin = () => {
                 CUSTOMIZE YOUR OWN INTEREST-RATE PRODUCTS
               </h1>
               <p className=" my-3 lg:text-lg text-base tracking-widest lg:w-2/4 mx-auto">
-                Permissionlessly create your own interest-rate products using
-                our smart product factory
+                Effortlessly Craft your own interest Rate products using our accessible smart contract Factory
               </p>
               <Link to={"/market"}>
               <button className=" px-7 py-3 bg-[#0901eb] rounded-sm text-white group/btn hover:text-black font-semibold transition-[color] duration-100 ease-out tracking-[6px] my-5 relative">
@@ -459,7 +454,7 @@ const handleJoin = () => {
                 <FaqItem key={i} faq={faq}/>
                ))}
               </div>
-              <div className=" lg:w-1/2 w-full bg-[#45404d] p-px lg:pl-0 flex flex-col justify-center items-center gap-[1px]">
+              <div className=" lg:w-1/2 w-full bg-[#45404d] p-px lg:pl-px relative lg:-left-px flex flex-col justify-center items-center gap-[1px]">
                {FaqData2.map((faq,i) => (
                 <FaqItem key={i} faq={faq}/>
                ))}
