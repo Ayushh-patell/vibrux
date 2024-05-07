@@ -112,15 +112,15 @@ if(nodes[i].material) {
     tl.current.to(Cry.current.rotation, {duration:1, x:0,y:0,z:0.33},2.7)
     tl.current.to(Cry.current.position, {duration:1, x:65,y:7,z:-14},2.7)
     // PART 4 CRYTSTAL 2 ANIMATION IN AND OUT
-    tl.current.to(Cry2.current.position, {duration:0.8, x:window.innerWidth<1024?"-4":"-14",y:7,z:-14},3)
-    tl.current.to(Cry2.current.rotation, {duration:0.1, x:-1.4,y:0,z:1.35},3)
-    tl.current.to(Cry2.current.rotation, {duration:0.7, x:-1.4,y:0,z:0},3.1)
-    tl.current.to(Cry2.current.position, {duration:1, x:-70,y:7,z:14},3.8)
-    tl.current.to(Cry2.current.rotation, {duration:1, x:0,y:0,z:0, ease:"power1.in"},3.8)
+    tl.current.to(Cry2.current.position, {duration:0.8, x:window.innerWidth<1024?"-4":"-14",y:7,z:-14},3.2)
+    tl.current.to(Cry2.current.rotation, {duration:0.1, x:-1.4,y:0,z:1.35},3.2)
+    tl.current.to(Cry2.current.rotation, {duration:0.7, x:-1.4,y:0,z:0},3.3)
+    tl.current.to(Cry2.current.position, {duration:1, x:-70,y:7,z:14},4)
+    tl.current.to(Cry2.current.rotation, {duration:1, x:0,y:0,z:0, ease:"power1.in"},4)
     // PART 5 ZOOM OUT ANIMAITON OF MAIN GROUP
-    tl.current.to(ref.current.position, {duration:3.5, y:-100,z:-350, ease:"power1.in"},3.9)
+    tl.current.to(ref.current.position, {duration:3.5, y:-100,z:-350, ease:"power1.in"},4.1)
     tl.current.to(ref.current.position, {duration:2.5, y:-230,z:-1080},7.4)
-    tl.current.to(ref.current.rotation, {duration:6, y:0.2},3.9)
+    tl.current.to(ref.current.rotation, {duration:6, y:0.2},4.1)
 
     // PART 6 FRAGMENTED CRYSTAL
     tl2.current.to(CryP.current.rotation, {duration:15.5, x:3,y:0,z:0.5},0)
