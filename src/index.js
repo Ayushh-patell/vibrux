@@ -12,11 +12,9 @@ import { Web3OnboardProvider, init } from '@web3-onboard/react'
 
 //      WALLET MODULES
 import injectedModule from '@web3-onboard/injected-wallets'
-import trezorModule from '@web3-onboard/trezor'
 import walletConnectModule from '@web3-onboard/walletconnect'
 import coinbaseModule from '@web3-onboard/coinbase'
-import torusModule from '@web3-onboard/torus'
-import frontierModule from '@web3-onboard/frontier'
+
 import Dashboard from './Dashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,8 +25,7 @@ const rpcUrl = `https://mainnet.infura.io/v3/${infuraKey}`
 
 //      WALLET MODULES CONFIG
 const coinbase = coinbaseModule()
-const torus = torusModule()
-const frontier = frontierModule()
+
 const injected = injectedModule()
 
 const walletConnect = walletConnectModule({
@@ -36,15 +33,6 @@ const walletConnect = walletConnectModule({
   projectId: 'f6bd6e2911b56f5ac3bc8b2d0e2d7ad5',
   dappUrl: 'https://www.onboard.blocknative.com'
 })
-
-const trezor = trezorModule({
-  email: 'test@test.com',
-  appUrl: 'https://www.blocknative.com',
-  consecutiveEmptyAccountThreshold: 10
-})
-
-
-
 
 const chains = [
   {
@@ -109,7 +97,7 @@ const chains = [
   }
 ]
 
-const wallets = [injected, coinbase, walletConnect, torus, trezor, frontier]
+const wallets = [injected, coinbase, walletConnect]
 
 
 const web3Onboard = init({
