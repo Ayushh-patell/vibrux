@@ -67,8 +67,9 @@ const NavBar = () => {
 
   return (
     <nav className=' MainNav fixed z-50 top-0 left-0 w-full flex justify-between px-5 pr-3 py-1 items-start text-white overflow-hidden'>
-      {/* <img src="../logo.svg" alt="Struct Logo" className=' h-5 mt-6' /> */}
-      <p className=' text-2xl font-chakra'>VIBREX</p>
+      <div className=' mt-4'>
+                <img src="../vibrux bg.png" alt="vibrux logo" className=' lg:h-10 h-5' />
+                </div>
       <div className=' flex  justify-end items-start w-[30%] h-full gap-3'>
         <div onClick={toggleNav} className='pointer-events-auto flex justify-center cursor-pointer items-center h-8 py-9'>
         <div onMouseEnter={NavHover} onMouseLeave={NavHoverC} title='Open Menu' className={` menu w-14 h-4 flex flex-col justify-between items-center  transition-[height] duration-200 ease-out`}>
@@ -78,7 +79,7 @@ const NavBar = () => {
         </div>
 
         <div className=' h-full w-[100%] p-2 lg:flex hidden justify-center items-center'>
-             <Link className=' h-full w-full ' to={"/market"}>
+             <Link onClick={() => {gsap.set("body", { overflow:"auto"})}}  className=' h-full w-full ' to={"/market"}>
              <button onMouseEnter={LaunchHover} onMouseLeave={LaunchHoverC} className='pointer-events-auto origin-center h-full w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
              <div className=' launchBG absolute bg-[#0901eb] top-0 left-0 w-full h-full rounded-sm'></div>
              <div className=' launchbar1 absolute bg-[#0901eb] top-0 left-0 w-full h-[2px] rounded-sm'></div>
@@ -110,14 +111,10 @@ const NavBar = () => {
             <h4 className={`${Nav===3?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>NEWSLETTER</h4>
             </a>
         </div>
-        <div className=' lg:border-b border-gray-800 py-3 px-5'>
-            <a onClick={()=>{toggleNav(); setNav(0)}} href="https://feedback.struct.fi/">
-            <h4 className={`${Nav===4?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>FEEDBACK</h4>
-            </a>
-        </div>
+
 
         <div className=' h-20 w-[100%] p-2 lg:hidden flex justify-center items-center'>
-             <Link className=' h-full w-full ' to={"/market"}>
+             <Link onClick={() => {gsap.set("body", { overflow:"auto"})}}  className=' h-full w-full ' to={"/market"}>
              <button onMouseEnter={LaunchHover} onMouseLeave={LaunchHoverC} className='pointer-events-auto origin-center h-full w-full px-14 py-5 relative rounded-sm flex justify-center items-center gap-4 text-sm font-chakra font-semibold'>
              <div className=' launchBG absolute bg-[#0901eb] top-0 left-0 w-full h-full rounded-sm'></div>
              <div className=' launchbar1 absolute bg-[#0901eb] top-0 left-0 w-full h-[2px] rounded-sm'></div>
@@ -137,20 +134,15 @@ const NavBar = () => {
             <div> 
             <p className=' text-white/30 tracking-[5px] mb-5'>PRODUCT</p>
             <div className=' w-full overflow-x-hidden text-left'>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> FAQ</div>
                 <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Docs</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Litepaper</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Proposal</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Feedback</div>
             </div>
             </div>
             <div> 
             <p className=' text-white/30 tracking-[5px] mb-5'>SOCIALS</p>
             <div className=' w-full overflow-x-hidden text-left'>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Discord</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Twitter</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Telegram</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Linkedin</div>
+            
+                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /><a href="https://twitter.com/vibruxfi" target="_blank" rel="noopener noreferrer">Twitter</a></div>
+                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /><a href="http://t.me/vibruxfi" target="_blank" rel="noopener noreferrer">Telegram</a></div>
                 <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Medium</div>
 
             </div>

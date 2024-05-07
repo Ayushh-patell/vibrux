@@ -45,8 +45,10 @@ export function Crystal(props) {
     const glowMouse = document.getElementById("glowMouse")
     const MouseX = e.clientX
     const MouseY = e.clientY
+    if(glowMouse) {
     glowMouse.style.top = `${MouseY}px`
     glowMouse.style.left = `${MouseX}px`
+    }
   
     // ROTATE THE CRYSTALS ACCOORDING TO THE MOUSE MOVEMENT
     const CalcValX = ((2*MouseX)/ScreenX)-1
@@ -91,7 +93,6 @@ if(nodes[i].material) {
     // Set any other properties specific to MeshPhongMaterial as needed
   });
   nodes[i].material = phongMaterial;
-  console.log(nodes[i]);
 }
 
     // Set the material of the node to the new MeshPhongMaterial

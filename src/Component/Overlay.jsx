@@ -15,6 +15,23 @@ function Overlay() {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(
     () => {
+      let num = Math.floor(Math.random() * 30) + 1
+      const number = document.querySelector(".loadingNumber")
+
+      const tl = gsap.timeline()
+      tl.set("body", {overflow:"hidden"})
+      tl.to(".loadingBar", {scaleX:`0.${num}`, duration:0.5, delay:0.5, onStart:(() => {number.innerText = `${num}`}), onComplete:(() => { num = Math.floor(Math.random() * (60 - 30 + 1)) + 30})})
+      tl.to(".loadingBar", {scaleX:`0.${num}`, duration:1, delay:0.6, onStart:(() => {number.innerText = `${num}`}), onComplete:(() => { num = Math.floor(Math.random() * (85 - 60 + 1)) + 60})}, ">")
+      tl.to(".loadingBar", {scaleX:`0.${num}`, duration:0.8, delay:0.5, onStart:(() => {number.innerText = `${num}`}), onComplete:(() => { num = 100})}, ">")
+      tl.to(".loadingBar", {scaleX:`1`, duration:0.7, delay:0.5, onStart:(() => {number.innerText = `${num}` })}, ">")
+      tl.set("body", {overflow:"auto"})
+      tl.to(".loadingData", {opacity:"0", duration:0.2})
+      tl.to("#loadingwindow1", {scaleY:0, duration:0.5}, "<")
+      tl.to("#loadingwindow2", {scaleY:0, duration:0.5}, "<")
+      tl.to("#loadingscreen", {pointerEvents:"none", duration:0.1}, "<")
+      tl.from(".landingbox", {scale:'1.2', filter:"blur(5px)", duration:0.4, delay:0.4}, "<")
+
+
       document.querySelectorAll(".blurText").forEach((el) => {
         gsap.fromTo(
           el,
@@ -225,7 +242,7 @@ const handleJoin = () => {
       <NavBar />
       <main className=" text-white w-screen overflow-hidden">
         <section className=" h-dvh w-full flex flex-col justify-center items-center font-chakra">
-          <div className=" blurText">
+          <div className=" blurText landingbox">
             <div className=" blurTextI scale-125 blur-sm opacity-0">
               <h1 className=" max-w-6xl lg:text-8xl text-4xl px-10 text-center">
                 DECENTRALIZING STRUCTURED FINANCE
@@ -477,33 +494,27 @@ const handleJoin = () => {
              </button>
           </form>
           }
-          <p className=" lg:hidden text-gray-500 my-5">Struct finance 2023</p>
+          <p className=" lg:hidden text-gray-500 my-5">Vibrux finance 2023</p>
 
 
           <div className=" my-32 lg:mt-48 mt-12 grid lg:grid-cols-3 grid-cols-2 lg:gap-7">
             <div className=" lg:flex hidden flex-col justify-between items-start">
-              <p className=" text-gray-500">Struct finance 2023</p>
+              <p className=" text-gray-500">Vibrux finance 2023</p>
               <p onClick={() => {window.scrollTo({top:0, behavior:"smooth"})}} className=" text-white tracking-[6px] pointer-events-auto cursor-pointer">BACK TO TOP</p>
             </div>
 
             <div> 
             <p className=' text-white/30 tracking-[5px] mb-5 text-left'>PRODUCT</p>
             <div className=' w-full overflow-x-hidden text-left'>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> FAQ</div>
                 <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Docs</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Litepaper</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Proposal</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Feedback</div>
             </div>
             </div>
 
             <div> 
             <p className=' text-white/30 tracking-[5px] mb-5 text-left'>SOCIALS</p>
             <div className=' w-full overflow-x-hidden text-left'>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Discord</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Twitter</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Telegram</div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Linkedin</div>
+                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /><a href="https://twitter.com/vibruxfi" target="_blank" rel="noopener noreferrer">Twitter</a></div>
+                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /><a href="http://t.me/vibruxfi" target="_blank" rel="noopener noreferrer">Telegram</a></div>
                 <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Medium</div>
 
             </div>
@@ -517,6 +528,17 @@ const handleJoin = () => {
 {/* GLOW EFFECT */}
       <div id="glowMouse" aria-hidden className=" lg:block hidden pointer-events-none skew-x-[-15deg] fixed h-screen w-[70vh] bg-gradient-to-r from-transparent via-white to-transparent -translate-x-1/2 -translate-y-1/2 opacity-5 blur-3xl "></div>
       <div aria-hidden className=" glowScreen pointer-events-none w-screen h-screen fixed top-0 left-0 bg-[#9e00c613] blur-lg"></div>
+
+      {/*       LOADING SCREEN       */}
+      <div id="loadingscreen" className=" fixed z-50 top-0 left-0 w-full h-full flex justify-between items-center flex-col" title="Loading">
+      <div className=" loadingData absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-full h-full flex flex-col justify-center items-center gap-5">
+        <img src="../vibrux bg.png" alt="vibrux" className=" h-10" />
+        <div className=" w-full h-px bg-white scale-x-0 loadingBar"></div>
+        <p className=" text-4xl text-white font-chakra"><span className=" loadingNumber">0</span>%</p>
+      </div>
+        <div id="loadingwindow1" className=" w-full h-1/2 origin-top bg-black"></div>
+        <div id="loadingwindow2" className=" w-full h-1/2 origin-bottom bg-black"></div>
+      </div>
     </div>
   );
 }
