@@ -18,7 +18,7 @@ export const DashboardData = [
     {
         platform:"TraderJoe",
         TVL:"0.00",
-        tokens:["BTC.B", "USDC"],
+        tokens:["wETH", "USDT"],
         fixedY:"",
         variableY:"",
         boosted:true
@@ -40,43 +40,11 @@ export const DashboardData = [
         boosted:false
     },
     {
-        platform:"TraderJoe",
-        TVL:"0.00",
-        tokens:["BTC.B", "AVAX"],
-        fixedY:"",
-        variableY:"",
-        boosted:true
-    },
-    {
         platform:"GMX",
         TVL:"0.00",
         tokens:["USDC", "USDC"],
         fixedY:"",
         variableY:"",
         boosted:false
-    },
-    {
-        platform:"TraderJoe",
-        TVL:"0.00",
-        tokens:["wETH", "AVAX"],
-        fixedY:"",
-        variableY:"",
-        boosted:true
-    },
-    {
-        platform:"GMX",
-        TVL:"0.00",
-        tokens:["sAVAX", "AVAX"],
-        fixedY:"",
-        variableY:"",
-        boosted:false
-    },
-    {
-        platform:"GMX",
-        TVL:"0.00",
-        tokens:["AVAX", "USDC"],
-        fixedY:"",
-        variableY:"",
-        boosted:false
-    },
+    }
 ]

@@ -182,9 +182,9 @@ const Market = () => {
                         <img src="../eth.svg" alt="ETH" className=' h-5' />
                         wETH
                     </div>
-                    <div onClick={() => {handleTokens("AVAX")}} className={` cursor-pointer flex justify-center items-center gap-2 px-4 py-1 rounded border border-[#212121] ${selectedTokens.some((item) => (item==="AVAX"))? " bg-white/5":""}`}>
-                        <img src="../avax.svg" alt="avax" className=' h-5' />
-                        AVAX
+                    <div onClick={() => {handleTokens("USDT")}} className={` cursor-pointer flex justify-center items-center gap-2 px-4 py-1 rounded border border-[#212121] ${selectedTokens.some((item) => (item==="USDT"))? " bg-white/5":""}`}>
+                        <img src="../usdt.svg" alt="usdt" className=' h-5' />
+                        USDT
                     </div>
                     <div onClick={() => {handleTokens("USDC")}} className={` cursor-pointer flex justify-center items-center gap-2 px-4 py-1 rounded border border-[#212121] ${selectedTokens.some((item) => (item==="USDC"))? " bg-white/5":""}`}>
                         <img src="../usdc.svg" alt="usdc" className=' h-5' />
@@ -234,7 +234,7 @@ const Market = () => {
                     <form className=' space-y-4 flex flex-col justify-start items-start text-sm'>
                         <label htmlFor="btcb"> <input onClick={() => {handleTokens("BTC.B")}} type="checkbox"  className='regular-checkbox' id='btcb' /> <label htmlFor="btcb"></label> BTC.B</label>
                         <label htmlFor="weth"> <input onClick={() => {handleTokens("wETH")}} type="checkbox"  className='regular-checkbox' id='weth' /> <label htmlFor="weth"></label> wETH</label>
-                        <label htmlFor="avax"> <input onClick={() => {handleTokens("AVAX")}} type="checkbox"  className='regular-checkbox' id='avax' /> <label htmlFor="avax"></label> AVAX</label>
+                        <label htmlFor="usdt"> <input onClick={() => {handleTokens("USDT")}} type="checkbox"  className='regular-checkbox' id='usdt' /> <label htmlFor="usdt"></label> USDT</label>
                         <label htmlFor="usdc"> <input onClick={() => {handleTokens("USDC")}} type="checkbox"  className='regular-checkbox' id='usdc' /> <label htmlFor="usdc"></label> USDC</label>
                         <label htmlFor="savax"> <input onClick={() => {handleTokens("sAVAX")}} type="checkbox" className='regular-checkbox'  id='savax' /> <label htmlFor="savax"></label> sAVAX</label>
                         <label htmlFor="wbtc"> <input onClick={() => {handleTokens("wBTC")}}  type="checkbox"  className='regular-checkbox' id='wbtc' /> <label htmlFor="wbtc"></label> wBTC</label>

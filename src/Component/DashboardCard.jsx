@@ -1,10 +1,10 @@
 import React from 'react'
 
 const DashboardCard = ({data}) => {
-    const token1 = data.tokens[0]==="BTC.B"?"btc":data.tokens[0]==="wETH"?"eth":data.tokens[0]==="AVAX"?"avax":data.tokens[0]==="USDC"?"usdc":data.tokens[0]==="sAVAX"?"savax":data.tokens[0]==="wBTC"?"wbtc":"eurc"
-    const token2 = data.tokens[1]==="BTC.B"?"btc":data.tokens[1]==="wETH"?"eth":data.tokens[1]==="AVAX"?"avax":data.tokens[1]==="USDC"?"usdc":data.tokens[1]==="sAVAX"?"savax":data.tokens[1]==="wBTC"?"wbtc":"eurc"
-    const tokenColor1 = data.tokens[0]==="BTC.B"?"#F7931A":data.tokens[0]==="wETH"?"#222222":data.tokens[0]==="AVAX"?"#E84142":data.tokens[0]==="USDC"?"#2775CA":data.tokens[0]==="sAVAX"?"#00B3ED":data.tokens[0]==="wBTC"?"#2C2C2C":"#2775CA"
-    const tokenColor2 = data.tokens[1]==="BTC.B"?"#F7931A":data.tokens[1]==="wETH"?"#222222":data.tokens[1]==="AVAX"?"#E84142":data.tokens[1]==="USDC"?"#2775CA":data.tokens[1]==="sAVAX"?"#00B3ED":data.tokens[1]==="wBTC"?"#2C2C2C":"#2775CA"
+    const token1 = data.tokens[0]==="BTC.B"?"btc":data.tokens[0]==="wETH"?"eth":data.tokens[0]==="USDT"?"usdt":data.tokens[0]==="USDC"?"usdc":data.tokens[0]==="sAVAX"?"savax":data.tokens[0]==="wBTC"?"wbtc":"eurc"
+    const token2 = data.tokens[1]==="BTC.B"?"btc":data.tokens[1]==="wETH"?"eth":data.tokens[1]==="USDT"?"usdt":data.tokens[1]==="USDC"?"usdc":data.tokens[1]==="sAVAX"?"savax":data.tokens[1]==="wBTC"?"wbtc":"eurc"
+    const tokenColor1 = data.tokens[0]==="BTC.B"?"#F7931A":data.tokens[0]==="wETH"?"#222222":data.tokens[0]==="USDT"?"#50AB92":data.tokens[0]==="USDC"?"#2775CA":data.tokens[0]==="sAVAX"?"#00B3ED":data.tokens[0]==="wBTC"?"#2C2C2C":"#2775CA"
+    const tokenColor2 = data.tokens[1]==="BTC.B"?"#F7931A":data.tokens[1]==="wETH"?"#222222":data.tokens[1]==="USDT"?"#50AB92":data.tokens[1]==="USDC"?"#2775CA":data.tokens[1]==="sAVAX"?"#00B3ED":data.tokens[1]==="wBTC"?"#2C2C2C":"#2775CA"
     
     
   return (
