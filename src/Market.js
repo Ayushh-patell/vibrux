@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import DashboardCard from './Component/DashboardCard'
 import { DashboardData } from './Component/DashboardData'
+import { leaderboardData } from './Component/LeaderboardData'
 const ethers = require('ethers')
 
 
@@ -13,6 +14,15 @@ const ethers = require('ethers')
 
 
 const Market = () => {
+
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      
+        // These options are needed to round to whole numbers if that's what you want.
+        //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+        //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+      });
 
         //      WALLET CONFIG 
     const [{ wallet, connecting }, connect, disconnect] = useConnectWallet()
@@ -159,7 +169,7 @@ const Market = () => {
       </header>
       <main className=' bg-[#111] px-5 py-16 font-chakra text-white'>
         <p className=' tracking-widest lg:text-4xl text-3xl my-2 lg:text-left text-center'>Markets</p>
-        <p className=' text-left text-gray-400'>TVI: <span className=' pl-2'>$0.00</span></p>
+        <p className=' text-left text-gray-400'>TVI: <span className=' pl-2'>{formatter.format(leaderboardData.map((data)=> parseInt(data.invested)).reduce((tvl, curr)=> tvl += curr))}</span></p>
 
 {/* FILTER SELECTION */}
         <div className=' w-full lg:flex hidden justify-between items-center'>
