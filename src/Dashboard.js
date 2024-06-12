@@ -115,7 +115,7 @@ return (
       <main className=' bg-[#111] px-5 pt-16 font-chakra text-white'>
 
       <div className=' max-w-screen-lg mx-auto flex flex-col justify-center items-center'>
-        {!wallet ? <button onClick={connect} className=' my-2 border border-[#FFFFFF21] bg-[#212121] px-2 py-2 rounded-lg flex justify-center items-center gap-2'>Connect</button>
+        {!wallet ? <button  onClick={() => (wallet ? disconnect(wallet) : connect())} className=' my-2 border border-[#FFFFFF21] bg-[#212121] px-2 py-2 rounded-lg flex justify-center items-center gap-2'>Connect</button>
         :
         <>
         <div className=' gap-px grid lg:grid-cols-3 grid-cols-1 w-full'>
