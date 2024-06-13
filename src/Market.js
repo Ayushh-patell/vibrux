@@ -171,7 +171,7 @@ const Market = () => {
         <p className=' tracking-widest lg:text-4xl text-3xl my-2 lg:text-left text-center'>Markets</p>
         <p className=' text-left text-gray-400'>TVI: <span className=' pl-2'>{formatter.format(leaderboardData.map((data)=> parseInt(data.invested)).reduce((tvl, curr)=> tvl += curr))}</span></p>
 
-{/* FILTER SELECTION */}
+{/* FILTER SELECTION  */}
         <div className=' w-full lg:flex hidden justify-between items-center'>
             <div className=' mt-28'>
                 <p className=' text-gray-400 text-lg my-2'>Sort</p>
